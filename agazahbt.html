@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surat Agazah | Hi-Ma'had</title>
+    <meta name="description" content="Panduan lengkap pengurusan surat Agazah di Ma'had Banat.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+
+<!-- Google Fonts: Poppins (judul) + Nunito (teks) -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ══════════════════════════════════════════════
+   RESET & BASE
+══════════════════════════════════════════════ */
+*, *::before, *::after {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+:root {
+    --bg:          #0F2A24;
+    --bg-deep:     #091C16;
+    --bg-card:     #163322;
+    --bg-card2:    #1C3F2C;
+    --border:      #2E5A4A;
+    --border-soft: rgba(46, 90, 74, 0.5);
+    --gold:        #F4E17C;
+    --gold-hover:  #FFEA9E;
+    --gold-pale:   rgba(244, 225, 124, 0.08);
+    --gold-glow:   rgba(244, 225, 124, 0.15);
+    --gold-border: rgba(244, 225, 124, 0.22);
+    --text:        #E0EBE5;
+    --text-muted:  #7AADA0;
+    --text-faint:  #3F6E5E;
+    --success:     #34D399;
+    --success-bg:  rgba(52, 211, 153, 0.1);
+    --blue:        #60A5FA;
+    --blue-bg:     rgba(96, 165, 250, 0.1);
+    --wa:          #25D366;
+    --wa-bg:       rgba(37, 211, 102, 0.1);
+    --wa-border:   rgba(37, 211, 102, 0.22);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+* { scrollbar-width: thin; scrollbar-color: var(--border) var(--bg-deep); }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.75;
+}
+
+/* Poppins untuk semua heading */
+h1, h2, h3, h4, h5 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ══════════════════════════════════════════════
+   TOPBAR — sticky
+══════════════════════════════════════════════ */
+.topbar {
+    background: rgba(9, 28, 22, 0.97);
+    border-bottom: 1px solid var(--border-soft);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    position: sticky;
+    top: 0; z-index: 100;
+    padding: 14px 0;
+}
+
+.topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold-pale);
+    border: 1px solid var(--gold-border);
+    color: var(--gold);
+    border-radius: 99px;
+    padding: 8px 18px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.83rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn-back:hover {
+    background: var(--gold-glow);
+    transform: translateX(-3px);
+}
+
+.topbar-logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--gold);
+    font-size: 1.15rem;
+    text-decoration: none;
+}
+
+.topbar-tag {
+    background: var(--gold-pale);
+    border: 1px solid var(--gold-border);
+    color: var(--gold);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.69rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 99px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* ══════════════════════════════════════════════
+   HERO
+══════════════════════════════════════════════ */
+.hero {
+    padding: 40px 0 30px !important;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Radial glow + dot grid */
+.hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+        radial-gradient(ellipse 75% 60% at 50% 0%, rgba(244,225,124,0.07) 0%, transparent 65%),
+        radial-gradient(ellipse 45% 35% at 15% 100%, rgba(46,90,74,0.25) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(244,225,124,0.045) 1px, transparent 0);
+    background-size: 28px 28px;
+    pointer-events: none;
+}
+
+.hero-inner { position: relative; z-index: 1; }
+
+.hero-icon-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 76px; height: 76px;
+    background: var(--gold-pale);
+    border: 1px solid var(--gold-border);
+    border-radius: 22px;
+    font-size: 2.2rem;
+    margin-bottom: 22px;
+    animation: popIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.hero-eyebrow {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.73rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.75;
+    margin-bottom: 12px;
+    animation: fadeUp 0.5s 0.1s ease both;
+}
+
+.hero h1 {
+    font-size: 2.2rem !important;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.12;
+    margin-bottom: 8px !important;
+    animation: fadeUp 0.5s 0.16s ease both;
+}
+
+.hero h1 span { color: var(--gold); }
+
+.hero-desc {
+    font-size: 0.94rem;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin: 0 auto 32px;
+    margin-bottom: 20px !important;
+    font-weight: 400;
+    animation: fadeUp 0.5s 0.22s ease both;
+}
+
+/* Status Pills */
+.hero-pills {
+    display: flex;
+    justify-content: center;
+    gap: 8px !important;
+    flex-wrap: wrap;
+    animation: fadeUp 0.5s 0.3s ease both;
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px !important;
+    padding: 6px 12px;
+    border-radius: 99px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.75rem !important;
+    font-weight: 700;
+}
+
+.pill-green {
+    background: var(--success-bg);
+    color: var(--success);
+    border: 1px solid rgba(52, 211, 153, 0.2);
+}
+
+.pill-gold {
+    background: var(--gold-pale);
+    color: var(--gold);
+    border: 1px solid var(--gold-border);
+}
+
+.pill-blue {
+    background: var(--blue-bg);
+    color: var(--blue);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+}
+
+.pill-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+    animation: pulse 2s infinite;
+}
+
+/* ══════════════════════════════════════════════
+   PAGE CONTENT
+══════════════════════════════════════════════ */
+.page-content { padding-bottom: 80px; }
+
+/* Section label */
+.sec-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.sec-label-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+}
+
+.sec-label-line {
+    flex: 1; height: 1px;
+    background: linear-gradient(90deg, var(--border), transparent);
+}
+
+/* ══════════════════════════════════════════════
+   PERSYARATAN
+══════════════════════════════════════════════ */
+.req-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px 26px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp 0.5s 0.3s ease both;
+}
+
+/* Gold accent line di atas */
+.req-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--gold), rgba(244,225,124,0.15), transparent);
+    border-radius: 20px 20px 0 0;
+}
+
+.req-card-title {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 20px;
+}
+
+.req-card-title .icon-box {
+    width: 42px; height: 42px;
+    background: var(--gold-pale);
+    border: 1px solid var(--gold-border);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; flex-shrink: 0;
+}
+
+.req-card-title h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.req-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.req-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.req-item:hover {
+    border-color: var(--gold-border);
+    background: var(--gold-pale);
+}
+
+.req-num {
+    width: 27px; height: 27px;
+    background: var(--gold-pale);
+    border: 1px solid var(--gold-border);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem; font-weight: 700;
+    color: var(--gold); flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.req-text strong {
+    display: block;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.91rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.req-text span {
+    font-size: 0.81rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* ══════════════════════════════════════════════
+   INFO PENTING
+══════════════════════════════════════════════ */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.5s 0.35s ease both;
+}
+
+.info-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.info-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold-border);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+.info-icon {
+    width: 40px; height: 40px;
+    background: var(--gold-pale);
+    border: 1px solid var(--gold-border);
+    border-radius: 11px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+.info-body h5 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-faint);
+    margin-bottom: 5px;
+}
+
+.info-body p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.45;
+}
+
+/* ══════════════════════════════════════════════
+   LANGKAH-LANGKAH
+══════════════════════════════════════════════ */
+.steps-wrap {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    animation: fadeUp 0.5s 0.4s ease both;
+}
+
+.step {
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+/* Connector line antar step */
+.step:not(:last-child) .step-left::after {
+    content: '';
+    position: absolute;
+    left: 19px; top: 44px;
+    width: 2px;
+    height: calc(100% - 12px);
+    background: linear-gradient(to bottom, var(--border), transparent);
+}
+
+.step-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.step-num {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem; font-weight: 700;
+    color: var(--gold); z-index: 1;
+    transition: all 0.3s;
+}
+
+.step:hover .step-num {
+    background: var(--gold-pale);
+    border-color: var(--gold);
+    box-shadow: 0 0 0 5px rgba(244,225,124,0.07);
+}
+
+.step-body {
+    flex: 1;
+    padding-bottom: 28px;
+}
+
+.step-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    padding: 20px 22px;
+    transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+.step:hover .step-card {
+    border-color: var(--gold-border);
+    transform: translateX(5px);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+}
+
+.step-tag {
+    display: inline-block;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.67rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+
+.step-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.step-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+}
+
+.step-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    background: var(--gold-pale);
+    border: 1px solid rgba(244,225,124,0.15);
+    border-radius: 10px;
+    padding: 10px 13px;
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: var(--gold);
+    line-height: 1.6;
+}
+
+.step-note i { margin-top: 2px; flex-shrink: 0; }
+
+.step-note.mps {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--gold-pale);
+    border: 1px solid rgba(244,225,124,0.15);
+    border-radius: 10px;
+    padding: 10px 13px;
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: var(--gold);
+    line-height: 1.6;
+}
+
+.note-header {
+    display: flex;
+    align-items: center;    /* Agar ikon dan teks sejajar di tengah secara vertikal */
+    gap: 8px;               /* Jarak antara ikon lampu dan teks */
+    color: var(--gold);
+}
+
+.social-btn.mps {
+    background: rgba(66, 133, 244, 0.08);
+    color: #4285F4;
+    border-color: rgba(66, 133, 244, 0.22);
+    margin-top: 3px;
+    display: inline-flex;
+}
+
+.social-btn.mps:hover {
+    background: rgba(66, 133, 244, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(66, 133, 244, 0.2);
+}
+
+/* Step terakhir — warna success */
+.step-done .step-num {
+    background: rgba(52,211,153,0.1);
+    border-color: var(--success);
+    color: var(--success);
+}
+
+/* ══════════════════════════════════════════════
+   CONTOH DOKUMEN
+══════════════════════════════════════════════ */
+.doc-section {
+    margin-bottom: 40px;
+    animation: fadeUp 0.5s 0.45s ease both;
+}
+
+/* Border gradient luar */
+.doc-frame-outer {
+    background: linear-gradient(135deg,
+        rgba(244,225,124,0.18),
+        rgba(46,90,74,0.35),
+        rgba(244,225,124,0.06));
+    border-radius: 22px;
+    padding: 2px;
+}
+
+.doc-frame-inner {
+    background: var(--bg-card);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Watermark latar */
+.doc-frame-inner::before {
+    content: '📖';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6rem;
+    opacity: 0.03;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Chrome bar atas */
+.doc-chrome {
+    background: rgba(0,0,0,0.22);
+    border-bottom: 1px solid var(--border-soft);
+    padding: 11px 16px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.doc-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+}
+.doc-dot:nth-child(1) { background: rgba(239,68,68,0.55); }
+.doc-dot:nth-child(2) { background: rgba(251,191,36,0.55); }
+.doc-dot:nth-child(3) { background: rgba(52,211,153,0.55); }
+
+.doc-chrome-label {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.74rem;
+    color: var(--text-faint);
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+/* Area gambar */
+.doc-img-area {
+    position: relative;
+    height: auto !important;
+    min-height: 0 !important;
+    display: block !important;
+    align-items: center;
+    justify-content: center;
+    padding: 20px !important
+    z-index: 1 !important;
+    overflow: visible !important;
+}
+
+.doc-img-area img {
+    max-width: 100% !important;
+    max-height: none !important;
+    width: auto; height: auto !important;
+    object-fit: contain !important;
+    border-radius: 10px;
+    border: 1px solid var(--border-soft);
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 10px 36px rgba(0,0,0,0.4);
+    transition: transform 0.35s;
+}
+
+.doc-img-area img:hover { transform: scale(1.02); }
+
+/* Placeholder jika gambar belum ada */
+.doc-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    color: var(--text-faint);
+    padding: 52px 24px;
+    text-align: center;
+    width: 100%;
+}
+
+.doc-placeholder i {
+    font-size: 3rem;
+    color: var(--border);
+    display: block;
+}
+
+.doc-placeholder p {
+    font-size: 0.82rem;
+    line-height: 1.65;
+    max-width: 280px;
+    color: var(--text-faint);
+}
+
+/* Caption bawah */
+.doc-caption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 18px;
+    background: rgba(0,0,0,0.18);
+    border-top: 1px solid var(--border-soft);
+}
+
+.doc-caption-text {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.doc-caption-badge {
+    background: var(--gold-pale);
+    border: 1px solid var(--gold-border);
+    color: var(--gold);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.67rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 99px;
+    letter-spacing: 0.5px;
+}
+
+/* ══════════════════════════════════════════════
+   CTA — WHATSAPP
+══════════════════════════════════════════════ */
+.cta-box {
+    background: var(--bg-card);
+    border: 1px solid rgba(232,200,74,0.18);
+    border-radius: 14px;
+    padding: 36px 32px;
+    text-align: center;
+    position: relative; 
+    overflow: hidden;
+    margin-bottom: 20px !important;
+    animation: fadeUp 0.5s 0.6s ease both;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.cta-box::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 100%,
+        rgba(232,200,74,0.05) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.cta-box::after {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.cta-emoji { font-size: 2.5rem; margin-bottom: 14px; display: block; }
+
+.cta-box h2 {
+    font-family: 'Montserrat', serif;
+    font-size: 1.7rem; color: #fff;
+    margin-bottom: 10px; text-align: center;
+}
+
+.cta-box p {
+    font-size: 0.88rem; color: var(--text-muted);
+    max-width: 400px; margin: 0 auto 28px;
+    line-height: 1.7;
+}
+
+.btn-wa {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #25D366;
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem; font-weight: 700;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 6px 24px rgba(37,211,102,0.25);
+    margin-bottom: 5px;
+}
+
+.btn-wa:hover {
+    background: #1EBE58;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 32px rgba(37,211,102,0.35);
+}
+
+.btn-wa i { 
+   font-size: 1.1rem;}
+
+.cta-note {
+    margin-top: 20px !important;
+    font-size: 0.75rem; color: var(--text-faint);
+    display: inline-flex; align-items: center;
+    justify-content: center; gap: 5px;
+}
+
+/* ══════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════ */
+.page-footer {
+    background: var(--bg-deep);
+    border-top: 1px solid var(--border-soft);
+    padding: 30px 0 20px !important;
+    margin-top: 20px !important;
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem !important;
+    font-weight: 800;
+    color: var(--gold);
+    margin-bottom: 4px !important;
+}
+
+.footer-tagline {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.7rem !important;
+    color: var(--text-faint);
+    margin-bottom: 12px !important;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 8px !important;
+    flex-wrap: wrap;
+    margin-bottom: 15px !important;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px !important;
+    border-radius: 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.7rem !important;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1px solid;
+    transition: transform 0.25s, box-shadow 0.25s, background 0.2s;
+}
+
+.social-btn.ig {
+    background: rgba(225,48,108,0.08);
+    color: #F472B6;
+    border-color: rgba(225,48,108,0.22);
+}
+
+.social-btn.ig:hover {
+    background: rgba(225,48,108,0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(225,48,108,0.2);
+}
+
+.social-btn.wa {
+    background: rgba(37,211,102,0.08);
+    color: #4ADE80;
+    border-color: rgba(37,211,102,0.22);
+}
+
+.social-btn.wa:hover {
+    background: rgba(37,211,102,0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(37,211,102,0.2);
+}
+
+.social-btn.yt {
+    background: rgba(255,0,0,0.08);
+    color: #F87171;
+    border-color: rgba(255,0,0,0.22);
+}
+
+.social-btn.yt:hover {
+    background: rgba(255,0,0,0.14);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255,0,0,0.2);
+}
+
+.footer-divider {
+    width: 40px; height: 1px;
+    background: var(--border);
+    margin: 0 auto 12px;
+}
+
+.footer-copy {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.76rem;
+    color: var(--text-faint);
+}
+
+.footer-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--gold);
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.81rem;
+    font-weight: 700;
+    margin-top: 12px;
+    transition: gap 0.2s;
+}
+
+.footer-back:hover { gap: 11px; }
+
+/* ══════════════════════════════════════════════
+   BACK TO TOP
+══════════════════════════════════════════════ */
+.btt {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    width: 44px; height: 44px;
+    background: var(--gold);
+    color: #0F2A24;
+    border: none; border-radius: 50%;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+    z-index: 99;
+    opacity: 0;
+    transform: translateY(14px) scale(0.8);
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s, background 0.2s;
+}
+
+.btt.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.btt:hover {
+    background: var(--gold-hover);
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* ══════════════════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════════════════ */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.6); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.35; }
+}
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════ */
+@media (max-width: 640px) {
+    .hero h1        { font-size: 2.1rem; }
+    .cta-section    { padding: 34px 20px; }
+    .cta-section h2 { font-size: 1.5rem; }
+    .req-card       { padding: 22px 16px; }
+    .info-grid      { grid-template-columns: 1fr 1fr; }
+    .topbar-tag     { display: none; }
+    .footer-socials { gap: 8px; }
+    .social-btn     { padding: 9px 16px; font-size: 0.79rem; }
+    .doc-img-area   { min-height: 200px; padding: 16px; }
+    .btn-wa         { padding: 14px 28px; font-size: 0.9rem; }
+}
+
+@media (max-width: 400px) {
+    .info-grid   { grid-template-columns: 1fr; }
+    .hero h1     { font-size: 1.8rem; }
+    .hero-pills  { gap: 7px; }
+}
+
+/* Tambahan khusus Mobile agar lebih cakep */
+@media (max-width: 768px) {
+    .doc-img-area img {
+        max-width: 100%;    /* Di HP, pastikan memenuhi lebar layar */
+        border-radius: 5px; /* Sedikit lebih tajam di layar kecil */
+    }
+}
+</style>
+
+</head>
+<body>
+
+<!-- ── TOPBAR ──────────────────────────────────────── -->
+
+<nav class="topbar">
+    <div class="container topbar-inner">
+        <a href="index.html" class="btn-back">
+            <i class="fa-solid fa-arrow-left"></i> Kembali
+        </a>
+        <a href="index.html" class="topbar-logo">Hi-Ma'had</a>
+        <span class="topbar-tag">Administrasi</span>
+    </div>
+</nav>
+
+<!-- ── HERO ───────────────────────────────────────── -->
+
+<header class="hero">
+    <div class="container hero-inner">
+        <div class="hero-icon-wrap">📖</div>
+        <p class="hero-eyebrow">Tips Administrasi</p>
+        <h1>surat <span>Agazah</span></h1>
+        <p class="hero-desc">
+            Pengurusan surat Agazah (Cuti) di Ma'had Banat.
+        </p>
+        <div class="hero-pills">
+            <span class="pill pill-green">
+                <span class="pill-dot"></span> Tips
+            </span>
+            <span class="pill pill-gold">
+                <i class="fa-regular fa-clock"></i> 1 Hari Kerja
+            </span>
+            <span class="pill pill-blue">
+                <i class="fa-regular fa-calendar"></i> Ahad – Kamis
+            </span>
+        </div>
+    </div>
+</header>
+
+<!-- ── MAIN ───────────────────────────────────────── -->
+
+<main class="page-content">
+<div class="container">
+
+<!-- ─── PERSYARATAN ─── -->
+<div class="sec-label">
+    <span class="sec-label-text">Persyaratan</span>
+    <div class="sec-label-line"></div>
+</div>
+
+<div class="req-card">
+    <div class="req-card-title">
+        <div class="icon-box">📋</div>
+        <h2>Dokumen yang Diperlukan</h2>
+    </div>
+    <ul class="req-list">
+
+        <li class="req-item">
+            <div class="req-num">1</div>
+            <div class="req-text">
+                <strong>Paspor</strong>
+                <span>
+                    Membawa Paspor saat mengajukan surat Agazah.
+                </span>
+            </div>
+        </li>
+
+        <li class="req-item">
+            <div class="req-num">2</div>
+            <div class="req-text">
+                <strong>Bukti kepergian</strong>
+                <span>
+                   Siapkan Bukti kepergian, contoh: Tiket pesawat. Cetak Tiket
+                   untuk dipergunakan saat pengajuan.
+                </span>
+            </div>
+        </li>
+      
+        <li class="req-item">
+            <div class="req-num">3</div>
+            <div class="req-text">
+                <strong>Pas Foto</strong>
+                <span>
+                   Siapkan Pas foto berukuran 4x6.
+                </span>
+            </div>
+        </li>
+
+    </ul>
+</div>
+
+<!-- ─── INFO PENTING ─── -->
+<div class="sec-label">
+    <span class="sec-label-text">Info Penting</span>
+    <div class="sec-label-line"></div>
+</div>
+
+<div class="info-grid">
+    <div class="info-item">
+        <div class="info-icon"><i class="fa-regular fa-calendar-check"></i></div>
+        <div class="info-body">
+            <h5>Jadwal Pengajuan</h5>
+            <p>Ahad – Kamis<br>10.00 – 13.00 CLT</p>
+        </div>
+    </div>
+    <div class="info-item">
+        <div class="info-icon"><i class="fa-regular fa-clock"></i></div>
+        <div class="info-body">
+            <h5>Lama Proses</h5>
+            <p>1 Hari Kerja</p>
+        </div>
+    </div>
+    <div class="info-item">
+        <div class="info-icon"><i class="fa-solid fa-laptop"></i></div>
+        <div class="info-body">
+            <h5>Tempat Pengajuan</h5>
+            <p>Ruangan <em>Akhisso'iyyah</em></p>
+        </div>
+    </div>
+    <div class="info-item">
+        <div class="info-icon"><i class="fa-solid fa-coins"></i></div>
+        <div class="info-body">
+            <h5>Biaya</h5>
+            <p>Gratis</p>
+        </div>
+    </div>
+</div>
+
+<!-- ─── LANGKAH-LANGKAH ─── -->
+<div class="sec-label">
+    <span class="sec-label-text">Langkah-langkah</span>
+    <div class="sec-label-line"></div>
+</div>
+
+<div class="steps-wrap">
+
+    <!-- Langkah 1 -->
+    <div class="step">
+        <div class="step-left">
+            <div class="step-num">1</div>
+        </div>
+        <div class="step-body">
+            <div class="step-card">
+                <span class="step-tag">Persiapan</span>
+                <h3>Siapkan Domunen yang telah ditentukan</h3>
+                <p>
+                    Sudah memiliki tiket sebagai bukti kepergian, serta menyiapkan
+                    Pas foto dan membawa Paspor saat masa pengajuan.
+                </p>
+                <div class="step-note">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    Jangan lupa untuk cetak tiket sebagai bukti kepergian.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Langkah 2 -->
+    <div class="step">
+        <div class="step-left">
+            <div class="step-num">2</div>
+        </div>
+        <div class="step-body">
+            <div class="step-card">
+                <span class="step-tag">Pengajuan</span>
+                <h3>Datang <em>Akhissoiyyah</em></h3>
+                <p>
+                    Kunjungi Ruangan <em>Akhissoiyyah</em> di lt. 1, untuk mengajukan surat Agazahmu
+                    Serahkan dokumen yang telah di persiapkan tadi kepada Ustadzah Ibtisam atau 
+                    Ustadzah Amal.
+                </p>
+                <div class="step-note">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    Pastikan kamu mengajukan ke Ustadzah Ibtisam atau Ustadzah Amal.
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Langkah 3 -->
+    <div class="step">
+        <div class="step-left">
+            <div class="step-num">3</div>
+        </div>
+        <div class="step-body">
+            <div class="step-card">
+                <span class="step-tag">Verifikasi</span>
+                <h3>Proses tanda tangan</h3>
+                <p>
+                    Setelah mendapatkan kertas Agazah, dilanjutkan dengan 
+                    meminta tanda tangan dari Syuun, Ustadzah Zainab, Amidah 
+                    dan beberapa Ust. di Qito' Ma'ahid pada hari yang sama.
+                </p>
+                <div class="step-note mps">
+                  <div class="note-header">
+                    <i class="fa-solid fa-lightbulb"></i>
+                       Berikut adalah lokasi Qito Ma'ahid.
+                     </div>
+                    <a href="https://maps.app.goo.gl/afHYrjBnRRdsiA7L9?g_st=ic"
+                       class="social-btn mps" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-google maps"></i> Qito Ma'ahid
+                 <div class="note-header">
+                    <i class="fa-solid fa-lightbulb"></i>
+                       Kamu bisa temui Ustadzah Zainab di ruangan <em>Akhissoiyyah</em>.
+                     </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Langkah 4 -->
+    <div class="step step-done">
+        <div class="step-left">
+            <div class="step-num">
+                <i class="fa-solid fa-check" style="font-size:0.85rem;"></i>
+            </div>
+        </div>
+        <div class="step-body">
+            <div class="step-card" style="border-color: rgba(52,211,153,0.22);">
+                <span class="step-tag" style="color: var(--success);">Selesai</span>
+                <h3>Surat Selesai dalam 1 Hari Kerja</h3>
+                <p>
+                    Setelah tanda tangan dalam surat sudah lengkap, surat Agazah sudah siap
+                    untuk kamu.
+                </p>
+                <div class="step-note" style="background: rgba(52,211,153,0.07); border-color: rgba(52,211,153,0.2); color: var(--success);">
+                    <i class="fa-solid fa-warning"></i>
+                    jangan lupa untuk memberikan kembali Surat Agazah saat pulang kembali
+                    ke Mesir. Dan juga menyertakan paspor.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ─── CONTOH DOKUMEN ─── -->
+<div class="sec-label">
+    <span class="sec-label-text">Contoh Dokumen</span>
+    <div class="sec-label-line"></div>
+</div>
+
+<div class="doc-section">
+    <div class="doc-frame-outer">
+        <div class="doc-frame-inner">
+
+            <!-- Chrome bar -->
+            <div class="doc-chrome">
+                <span class="doc-dot"></span>
+                <span class="doc-dot"></span>
+                <span class="doc-dot"></span>
+                <span class="doc-chrome-label">Contoh Dokumen</span>
+            </div>
+
+            <!-- Gambar -->
+            <div class="doc-img-area">
+                <!--
+                ══════════════════════════════════════════
+                CARA MEMASANG FOTO CONTOH DOKUMEN:
+
+                1. Simpan foto dengan nama: contoh-tadarruj.jpg
+                   di folder yang SAMA dengan file HTML ini.
+
+                2. Gambar akan langsung muncul menggantikan
+                   placeholder di bawah ini secara otomatis.
+
+                Format yang disarankan: JPG atau PNG
+                Ukuran minimal: lebar 600px
+                ══════════════════════════════════════════
+                -->
+                <img
+                    src="agaazahbt.jpg"
+                    alt="Contoh Surat Agazah"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                >
+                <div class="doc-placeholder" style="display:none;">
+                    <i class="fa-regular fa-image"></i>
+                    <p>
+                        Foto contoh belum tersedia.<br>
+                        Simpan file <strong style="color:var(--gold)">contoh-tadarruj.jpg</strong>
+                        di folder yang sama dengan halaman ini.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Caption -->
+            <div class="doc-caption">
+                <span class="doc-caption-text">
+                    <i class="fa-solid fa-circle-info" style="font-size:11px;"></i>
+                    Foto contoh Surat Agazah
+                </span>
+                <span class="doc-caption-badge">Referensi</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- ─── CTA WHATSAPP ─── -->
+    <div class="cta-box">
+        <span class="cta-emoji">🤝</span>
+        <h2>Masih Ada yang Membingungkan?</h2>
+        <p>Jangan ragu untuk langsung menghubungi admin HPIM Mesir. Kami siap membantu menjawab pertanyaanmu seputar surat Agazah.</p>
+        <!-- GANTI nomor di bawah dengan nomor WhatsApp admin yang aktif -->
+        <!-- Format: https://wa.me/[kode negara][nomor tanpa 0 di depan] -->
+        <a
+            href="https://wa.me/6285156579101?text=Halo%20Admin%20HPIM%2C%20saya%20ingin%20bertanya%20tentang%20pengurusan%20surat%20Agazah%20di%20Mahad%20Banat."
+            class="btn-wa"
+            target="_blank"
+            rel="noopener"
+        >
+            <i class="fa-brands fa-whatsapp"></i>
+            Hubungi Admin via WhatsApp
+        </a>
+        <p class="cta-note">
+            <i class="fa-regular fa-clock"></i>
+            Respons dalam 1×24 jam pada hari kerja
+        </p>
+    </div>
+
+</div><!-- /.container -->
+</main>
+
+<!-- ── FOOTER ──────────────────────────────────────── -->
+
+<footer class="page-footer">
+    <div class="container">
+        <div class="footer-logo">Hi-Ma'had</div>
+        <p class="footer-tagline">Pusat Informasi Mahadian's &nbsp;•&nbsp; HPIM Mesir</p>
+
+    <div class="footer-socials">
+        <a href="https://instagram.com/hpimmesir"
+           class="social-btn ig" target="_blank" rel="noopener">
+            <i class="fa-brands fa-instagram"></i> Instagram
+        </a>
+        <a href="https://wa.me/6285156579101"
+           class="social-btn wa" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="https://youtube.com/@HPIMMESIROFFICIAL"
+           class="social-btn yt" target="_blank" rel="noopener">
+            <i class="fa-brands fa-youtube"></i> YouTube
+        </a>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <p class="footer-copy">© 2026 HPIM Mesir &nbsp;•&nbsp; Semua hak dilindungi</p>
+
+</div>
+
+</footer>
+
+<!-- BACK TO TOP -->
+
+<button class="btt" id="btt" aria-label="Kembali ke atas">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script>
+const btt = document.getElementById('btt');
+window.addEventListener('scroll', () => {
+    btt.classList.toggle('visible', window.scrollY > 300);
+}, { passive: true });
+btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+
+</body>
+</html>
