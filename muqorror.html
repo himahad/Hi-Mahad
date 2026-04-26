@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muqorror Mahad | Hi-Ma'had</title>
+<meta name="description" content="Akses seluruh kurikulum dan silabus resmi Ma'had dalam satu tempat.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+    --bg:#0F2A24; 
+    --bg-card:#163322; 
+    --bg-card2:#1C3F2C;
+    --border:#2E5A4A; 
+    --border-s:rgba(46,90,74,.5);
+    --gold:#F4E17C; 
+    --gold-l:#F5DC7A;
+    --gold-pale:rgba(244,225,124,.08); 
+    --gold-glow:rgba(244,225,124,.15);
+    --gold-border:rgba(244,225,124,.22);
+    --text:#E0EBE5; 
+    --muted:#7AADA0; 
+    --faint:#3F6E5E;
+    --t1:#5ECBA1; 
+    --t1-bg:rgba(52,211,153,.08); 
+    --t1-bd:rgba(52,211,153,.2);
+    --t2:#93BBFD; 
+    --t2-bg:rgba(66,133,244,.08); 
+    --t2-bd:rgba(66,133,244,.2);
+}
+
+::-webkit-scrollbar{width:7px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px}
+::-webkit-scrollbar-thumb:hover{background:var(--gold)}
+*{scrollbar-width:thin;scrollbar-color:var(--border) var(--bg)}
+
+html{scroll-behavior:smooth}
+body{
+    font-family:'Nunito',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh}
+.container{max-width:960px;margin:0 auto;padding:0 20px}
+
+/* ── TOPBAR ─────────────────── */
+.topbar{
+    background:rgba(13,35,24,.97);
+    border-bottom:1px solid var(--border-s);
+    backdrop-filter:blur(14px);
+    position:sticky;
+    top:0;
+    z-index:100;
+    padding:13px 0;
+}
+
+.topbar-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px}
+    
+.btn-back-nav{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    background:var(--gold-pale);
+    border:1px solid rgba(232,200,74,.2);
+    color:var(--gold);
+    border-radius:99px;
+    padding:7px 16px;
+    font-size:.82rem;
+    font-weight:600;
+    cursor:pointer;
+    text-decoration:none;
+    transition:background .2s,transform .2s;
+}
+
+.btn-back-nav:hover{
+    background:var(--gold-glow);
+    transform:translateX(-2px)}
+    
+.topbar-logo{
+    font-family:'Poppins',sans-serif;
+    font-weight:700;
+    color:var(--gold);
+    font-size:1.15rem;
+    text-decoration:none}
+    
+.topbar-badge{
+    background:rgba(66,133,244,.12);
+    border:1px solid rgba(66,133,244,.2);
+    color:#93BBFD;
+    font-size:.7rem;
+    font-weight:700;
+    padding:4px 10px;
+    border-radius:99px;
+    letter-spacing:.7px;
+    text-transform:uppercase;
+}
+
+/* ── HERO ───────────────────── */
+.hero{
+    padding:40px 0 30px;
+    text-align:center;
+    position:relative;
+    overflow:hidden}
+    
+.hero::before{
+    content:’’;
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+    radial-gradient(ellipse 75% 60% at 50% 0%,rgba(244,225,124,.07) 0%,transparent 65%),
+    radial-gradient(ellipse 45% 35% at 15% 100%,rgba(46,90,74,.25) 0%,transparent 60%);
+}
+
+.hero::after{
+    content:’’;
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background-image:radial-gradient(circle at 1px 1px,rgba(244,225,124,.045) 1px,transparent 0);
+    background-size:28px 28px;
+}
+
+.hero-inner{
+    position:relative;
+    z-index:1}
+    
+.hero-icon-wrap{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:76px;
+    height:76px;
+    background:var(--gold-pale);
+    border:1px solid var(--gold-border);
+    border-radius:22px;
+    font-size:2.2rem;
+    margin-bottom:22px;
+    animation:popIn .55s cubic-bezier(.34,1.56,.64,1) both;
+}
+
+.hero-eyebrow{
+    font-size:.73rem;
+    font-weight:700;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    color:var(--gold);
+    opacity:.75;
+    margin-bottom:12px;
+    animation:fadeUp .5s .1s ease both;
+}
+
+.hero h1{
+    font-family:'Poppins',sans-serif;
+    font-size:2.3rem;
+    color:#fff;
+    margin-bottom:10px;
+    animation:fadeUp .5s .12s ease both}
+    
+.hero h1 span{color:var(--gold)}
+
+.hero .lead{
+    font-size:.93rem;
+    color:var(--muted);
+    max-width:480px;
+    margin:0 auto 26px;
+    animation:fadeUp .5s .18s ease both}
+    
+.hero-pills{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    flex-wrap:wrap;
+    animation:fadeUp .5s .25s ease both}
+    
+.pill{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:5px 13px;
+    border-radius:99px;
+    font-size:.77rem;
+    font-weight:600}
+    
+.pill-drive {
+    background:rgba(66,133,244,.1); 
+    color:#93BBFD;
+    border:1px solid rgba(66,133,244,.2)}
+    
+.pill-update{
+    background:var(--gold-pale);
+    color:var(--gold);
+    border:1px solid rgba(232,200,74,.2)}
+    
+.pill-count {
+    background:rgba(52,211,153,.08);
+    color:#5ECBA1;
+    border:1px solid rgba(52,211,153,.15)}
+
+/* ── TOOLBAR ────────────────── */
+.toolbar{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
+    flex-wrap:wrap;
+    animation:fadeUp .4s .3s ease both}
+    
+.search-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex:1;
+    min-width:200px;
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:10px 16px;
+    transition:border-color .2s,box-shadow .2s;
+}
+
+.search-box:focus-within{
+    border-color:rgba(232,200,74,.35);
+    box-shadow:0 0 0 3px rgba(232,200,74,.07)}
+
+.search-box i{
+    color:var(--faint);
+    font-size:.9rem}
+    
+.search-box input{
+    flex:1;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-family:'Nunito',sans-serif;
+    font-size:.88rem;
+    color:var(--text);
+}
+.search-box input::placeholder{color:var(--faint)}
+
+.filter-tabs{
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+    width:100%;
+    animation:fadeUp .4s .32s ease both}
+    
+.filter-btn{
+    padding:7px 13px;
+    border-radius:8px;
+    font-size:.75rem;
+    font-weight:700;
+    border:1px solid var(--border);
+    background:transparent;
+    color:var(--muted);
+    cursor:pointer;
+    font-family:'Nunito',sans-serif;
+    transition:all .2s;
+    white-space:nowrap;
+}
+.filter-btn:hover{
+    border-color:rgba(232,200,74,.3);
+    color:var(--gold)}
+.filter-btn.active{
+    background:var(--gold-pale);
+    border-color:rgba(232,200,74,.35);
+    color:var(--gold)}
+
+.toolbar-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+    animation:fadeUp .4s .34s ease both}
+    
+.btn-toggle-all{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:7px 14px;
+    border-radius:8px;
+    font-size:.75rem;
+    font-weight:700;
+    background:transparent;
+    color:var(--muted);
+    border:1px solid var(--border);
+    cursor:pointer;
+    font-family:'Nunito',sans-serif;
+    transition:all .2s;
+}
+
+.btn-toggle-all:hover{
+    border-color:rgba(232,200,74,.3);
+    color:var(--gold)}
+    
+.stats-row{
+    display:flex;
+    gap:14px;
+    font-size:.72rem;
+    color:var(--muted);
+    align-items:center;
+    flex-wrap:wrap}
+    
+.stats-row i{
+    color:var(--faint);
+    font-size:.65rem}
+
+/* ── SECTION ACCORDION ──────── */
+.sec-wrap{
+    background:var(--bg-card);
+    border:1px solid var(--border-s);
+    border-radius:18px;
+    overflow:hidden;
+    margin-bottom:12px;
+    animation:fadeUp .35s ease both;
+}
+
+.sec-header{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:16px 20px;
+    cursor:pointer;
+    user-select:none;
+    transition:background .2s;
+}
+
+.sec-header:hover{background:rgba(255,255,255,.02)}
+
+.sec-title-group{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-shrink:0}
+    
+.sec-title{
+    font-family:'Poppins',sans-serif;
+    font-size:1.05rem;
+    color:#fff}
+    
+.sec-count{
+    font-size:.7rem;
+    font-weight:700;
+    padding:3px 9px;
+    border-radius:99px;
+    background:var(--gold-pale);
+    color:var(--gold)}
+    
+.sec-line{
+    flex:1;
+    height:1px;
+    background:linear-gradient(90deg,var(--border),transparent)
+}
+
+.sec-chevron{
+    color:var(--faint);
+    font-size:.8rem;
+    flex-shrink:0;
+    transition:transform .3s,color .2s}
+    
+.sec-wrap.open  .sec-chevron{color:var(--gold)}   
+.sec-wrap.closed .sec-body   {display:none}
+.sec-wrap.closed .sec-chevron{transform:rotate(-90deg)}
+.sec-body{padding:0 20px 20px}
+
+/* ── JURUSAN TABS ───────────── */
+.jurusan-tabs{
+    display:flex;
+    gap:6px;
+    padding:6px;
+    background:rgba(0,0,0,.15);
+    border-radius:12px;
+    width:fit-content;
+    margin-bottom:16px;
+}
+
+.j-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:8px 18px;
+    border-radius:8px;
+    font-size:.82rem;
+    font-weight:700;
+    border:none;
+    background:transparent;
+    color:var(--muted);
+    cursor:pointer;
+    font-family:'Nunito',sans-serif;
+    transition:all .2s;
+}
+
+.j-btn.active{
+    background:var(--bg-card2);
+    color:var(--gold);
+    box-shadow:0 2px 8px rgba(0,0,0,.2)}
+
+.j-btn:not(.active):hover{color:var(--text)}
+.j-playlist{
+    display:none;
+    flex-direction:column;
+    gap:12px}
+    
+.j-playlist.active{display:flex}
+.s-playlist{
+    display:flex;
+    flex-direction:column;
+    gap:12px}
+
+/* ── SUBJECT GROUP ──────────── */
+.subj-group{
+    background:rgba(255,255,255,.02);
+    border:1px solid rgba(46,90,74,.4);
+    border-radius:14px;
+    overflow:hidden;
+}
+
+/* Subject header row */
+.subj-header{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px 16px;
+    cursor:pointer;
+    user-select:none;
+    transition:background .2s;
+    border-bottom:1px solid rgba(46,90,74,.25);
+}
+
+.subj-header:hover{background:rgba(255,255,255,.03)}
+.subj-num{
+    width:26px;
+    height:26px;
+    flex-shrink:0;
+    background:rgba(255,255,255,.04);
+    border:1px solid var(--border);
+    border-radius:7px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:.7rem;
+    font-weight:700;
+    color:var(--muted);
+    font-family:'Poppins',sans-serif;
+    transition:background .2s,color .2s;
+}
+
+.subj-header.open .subj-num{
+    background:var(--gold-pale);
+    color:var(--gold)}
+
+.subj-icon{font-size:1.2rem;flex-shrink:0}
+.subj-name{
+    flex:1;
+    font-size:.9rem;
+    font-weight:700;
+    color:var(--text);
+    min-width:0;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis}
+
+.subj-header.open .subj-name{color:#fff}
+.subj-meta{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-shrink:0}
+    
+.subj-avail{
+    font-size:.68rem;
+    color:var(--muted)}
+    
+.subj-chevron{
+    color:var(--faint);
+    font-size:.72rem;
+    transition:transform .3s,color .2s;
+    flex-shrink:0}
+    
+.subj-header.open .subj-chevron{
+    transform:rotate(180deg);
+    color:var(--gold)}
+
+/* Subject body (terms) */
+.subj-body{
+    display:none;
+    flex-direction:column;
+    gap:0}
+.subj-body.open{display:flex}
+
+/* ── TERM ITEM ──────────────── */
+.term-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:11px 16px 11px 20px;
+    border-bottom:1px solid rgba(46,90,74,.15);
+    cursor:pointer;
+    text-decoration:none;
+    transition:background .2s,transform .15s;
+    position:relative;
+}
+.term-item:last-child{border-bottom:none}
+.term-item::before{
+    content:’’;
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    width:3px;
+    transition:background .2s;
+}
+
+.term-item.t1::before{background:transparent}
+.term-item.t2::before{background:transparent}
+.term-item.available.t1:hover{background:rgba(52,211,153,.05)}
+.term-item.available.t1:hover::before{background:var(--t1)}
+.term-item.available.t2:hover{background:rgba(66,133,244,.05)}
+.term-item.available.t2:hover::before{background:var(--t2)}
+.term-item.unavailable{cursor:default;opacity:.5}
+
+.term-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    font-size:.7rem;
+    font-weight:800;
+    padding:3px 10px;
+    border-radius:99px;
+    flex-shrink:0;
+    letter-spacing:.4px;
+    text-transform:uppercase;
+}
+.t1 .term-badge{
+    background:var(--t1-bg);
+    color:var(--t1);border:1px solid var(--t1-bd)}
+
+.t2 .term-badge{
+    background:var(--t2-bg);
+    color:var(--t2);
+    border:1px solid var(--t2-bd)}
+
+.term-info{flex:1;min-width:0}
+.term-title{
+    font-size:.83rem;
+    font-weight:600;
+    color:var(--muted);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis}
+    
+.term-item.available .term-title{color:var(--text)}
+.term-item.available:hover .term-title{color:#fff}
+.term-sub{font-size:.7rem;color:var(--faint)}
+.term-item.available .term-sub{color:var(--muted)}
+
+.term-actions{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-shrink:0}
+
+/* Tags */
+.pl-tag{
+    font-size:.63rem;
+    font-weight:700;
+    padding:2px 8px;
+    border-radius:99px;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    white-space:nowrap}
+    
+.tag-pdf    {background:rgba(239,68,68,.1);  color:#F87171}
+.tag-unavail{background:rgba(120,120,120,.1);color:#5A7A72}
+
+/* Copy btn */
+.btn-copy{
+    width:26px;
+    height:26px;
+    border-radius:7px;
+    background:rgba(46,90,74,.5);
+    border:1px solid var(--border-s);
+    color:var(--faint);
+    font-size:.65rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:all .2s;
+    position:relative;
+}
+
+.btn-copy:hover{
+    background:var(--gold-pale);
+    color:var(--gold);
+    border-color:var(--gold-border)}
+
+.copy-tip{
+    position:absolute;
+    bottom:calc(100%+5px);
+    right:0;
+    background:#1a3d2e;
+    border:1px solid var(--border);
+    color:var(--gold);
+    font-size:.62rem;
+    font-weight:700;
+    padding:2px 8px;
+    border-radius:5px;
+    white-space:nowrap;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .2s;
+}
+.btn-copy.copied .copy-tip{opacity:1}
+
+.term-arrow{
+    color:var(--faint);
+    font-size:.68rem;
+    flex-shrink:0;
+    transition:color .2s,transform .2s}
+.term-item.available:hover .term-arrow{
+    color:var(--gold);
+    transform:translateX(3px)}
+
+/* ── NO RESULT ──────────────── */
+.no-result{
+    text-align:center;
+    padding:52px 20px;
+    color:var(--muted);
+    font-size:.88rem;
+    display:none}
+    
+.no-result i{
+    font-size:2rem;
+    display:block;
+    margin-bottom:12px;
+    opacity:.4}
+
+/* ── CTA ────────────────────── */
+.cta-section{
+    margin:40px 0 32px;
+    background:var(--bg-card);
+    border:1px solid rgba(66,133,244,.2);
+    border-radius:22px;
+    padding:40px 32px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    animation:fadeUp .4s .4s ease both;
+}
+.cta-section::before{
+    content:’’;
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:radial-gradient(ellipse 70% 55% at 50% 100%,rgba(66,133,244,.05) 0%,transparent 65%);
+}
+.cta-section::after{
+    content:’’;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:2px;
+    background:linear-gradient(90deg,transparent,#4285F4,transparent);
+}
+.cta-emoji{
+    font-size:2.4rem;
+    display:block;
+    margin-bottom:14px}
+.cta-section h2{
+    font-family:'Poppins',sans-serif;
+    font-size:1.7rem;
+    color:#fff;
+    margin-bottom:10px;
+    text-align:center}
+
+.cta-section p{
+    font-size:.87rem;
+    color:var(--muted);
+    max-width:400px;
+    margin:0 auto 28px;
+    line-height:1.7}
+
+.btn-drive{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:#4285F4;
+    color:#fff;
+    padding:14px 32px;
+    border-radius:13px;
+    font-family:'Nunito',sans-serif;
+    font-size:.93rem;
+    font-weight:700;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    box-shadow:0 6px 24px rgba(66,133,244,.3);
+    transition:background .2s,transform .2s,box-shadow .2s;
+}
+.btn-drive:hover{
+    background:#3367D6;
+    transform:translateY(-3px);
+    box-shadow:0 10px 32px rgba(66,133,244,.4)}
+
+.cta-note{margin-top:14px;
+    font-size:.74rem;
+    color:var(--faint);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:5px}
+
+/* ── FOOTER ─────────────────── */
+.page-footer{
+    background:rgba(13,35,24,.97);
+    border-top:1px solid var(--border-s);
+    padding:30px 0 20px;
+    margin-top:20px;
+    text-align:center}
+    
+.footer-logo{
+    font-family:'Poppins',sans-serif;
+    font-size:1.1rem;
+    font-weight:800;
+    color:var(--gold);
+    margin-bottom:4px}
+    
+.footer-tagline{
+    font-size:.7rem;
+    color:var(--muted);
+    margin-bottom:12px}
+    
+.footer-socials{
+    display:
+    flex;justify-content:
+    center;gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:15px}
+    
+.social-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:6px 12px;
+    border-radius:12px;
+    font-size:.7rem;
+    font-weight:700;
+    text-decoration:none;
+    border:1px solid;
+    transition:transform .25s,box-shadow .25s,background .2s}
+    
+.social-btn.ig{
+    background:rgba(225,48,108,.08);
+    color:#F472B6;
+    border-color:rgba(225,48,108,.22)}
+    
+.social-btn.ig:hover{
+    background:rgba(225,48,108,.15);
+    transform:translateY(-3px);
+    box-shadow:0 6px 20px rgba(225,48,108,.2)}
+    
+.social-btn.wa{
+    background:rgba(37,211,102,.08);
+    color:#4ADE80;
+    border-color:rgba(37,211,102,.22)}
+    
+.social-btn.wa:hover{
+    background:rgba(37,211,102,.15);
+    transform:translateY(-3px);
+    box-shadow:0 6px 20px rgba(37,211,102,.2)}
+    
+.social-btn.yt{
+    background:rgba(255,0,0,.08);
+    color:#F87171;
+    border-color:rgba(255,0,0,.22)}
+    
+.social-btn.yt:hover{
+    background:rgba(255,0,0,.14);
+    transform:translateY(-3px);
+    box-shadow:0 6px 20px rgba(255,0,0,.2)}
+    
+.footer-divider{
+    width:40px;
+    height:1px;
+    background:var(--border);
+    margin:0 auto 12px}
+    
+.footer-copy{
+    font-size:.76rem;
+    color:var(--muted)}
+
+/* ── BTT ────────────────────── */
+.btt{
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    width:43px;
+    height:43px;
+    background:var(--gold);
+    color:#0D2318;
+    border:none;
+    border-radius:50%;
+    font-size:.95rem;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 20px rgba(0,0,0,.35);
+    z-index:99;
+    opacity:0;
+    transform:translateY(12px) scale(.8);
+    pointer-events:none;
+    transition:opacity .3s,transform .3s,background .2s;
+}
+.btt.visible{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    pointer-events:auto}
+    
+.btt:hover{
+    background:var(--gold-l);
+    transform:translateY(-3px) scale(1.08)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes popIn {from{opacity:0;transform:scale(.7)}        to{opacity:1;transform:scale(1)}}
+
+@media(max-width:640px){
+.hero h1{font-size:1.9rem}
+.cta-section{padding:28px 18px}
+.topbar-badge,.filter-tabs{display:none}
+.term-item{padding:10px 14px 10px 18px}
+}
+</style>
+
+</head>
+<body>
+
+<!-- TOPBAR -->
+
+<nav class="topbar">
+  <div class="container topbar-inner">
+    <a href="index.html" class="btn-back-nav"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
+    <a href="index.html" class="topbar-logo">Hi-Ma'had</a>
+    <span class="topbar-badge">Akademik</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+  <div class="container hero-inner">
+    <div class="hero-icon-wrap">📚</div>
+    <p class="hero-eyebrow">Akademik</p>
+    <h1>Muqorror <span>Ma'had</span></h1>
+    <p class="lead">Akses buku pelajaran Ma'had. Tersedia per-termin untuk setiap tingkat.</p>
+    <div class="hero-pills">
+      <span class="pill pill-drive"><i class="fa-brands fa-google-drive"></i> Google Drive</span>
+      <span class="pill pill-update"><i class="fa-solid fa-rotate"></i> Diperbarui berkala</span>
+      <span class="pill pill-count" id="totalCount"><i class="fa-solid fa-book-open"></i> Memuat...</span>
+    </div>
+  </div>
+</header>
+
+<main style="padding-bottom:80px">
+<div class="container">
+
+  <div class="toolbar">
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="searchInput" placeholder="Cari nama mata pelajaran...">
+    </div>
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all">Semua</button>
+      <button class="filter-btn" data-filter="s1">Idadi 1</button>
+      <button class="filter-btn" data-filter="s2">Idadi 2</button>
+      <button class="filter-btn" data-filter="s3">Idadi 3</button>
+      <button class="filter-btn" data-filter="s4">Tsanawi 1</button>
+      <button class="filter-btn" data-filter="s5">Tsanawi 2</button>
+      <button class="filter-btn" data-filter="s6">Tsanawi 3</button>
+    </div>
+  </div>
+
+  <div class="toolbar-row">
+    <button class="btn-toggle-all" id="btnToggleAll">
+      <i class="fa-solid fa-compress"></i> Tutup Semua
+    </button>
+    <div class="stats-row">
+      <span><i class="fa-solid fa-circle-check"></i> <span id="statAvail">0</span> file tersedia</span>
+      <span><i class="fa-solid fa-clock"></i> <span id="statPending">0</span> segera hadir</span>
+    </div>
+  </div>
+
+  <div id="sections"></div>
+
+  <div class="no-result" id="noResult">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    Tidak ada muqorror yang cocok dengan pencarianmu.
+  </div>
+
+  <!-- CTA -->
+
+  <div class="cta-section">
+    <span class="cta-emoji">📂</span>
+    <h2>Akses Semua File di Google Drive</h2>
+    <p>Seluruh muqorror tersimpan lengkap di Google Drive Ma'had. Kamu bisa membuka, mengunduh, dan menyimpannya langsung ke Drive pribadi.</p>
+    <!-- GANTI href dengan link Google Drive folder muqorror kamu -->
+    <a href="https://drive.google.com/drive/folders/GANTI_ID_FOLDER" class="btn-drive" target="_blank" rel="noopener">
+      <i class="fa-brands fa-google-drive"></i> Buka Google Drive Muqorror
+    </a>
+    <p class="cta-note"><i class="fa-solid fa-lightbulb" style="font-size:10px"></i> Pastikan kamu memanfaatkan filenya dengan baik</p>
+  </div>
+
+</div>
+</main>
+
+<!-- FOOTER -->
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="footer-logo">Hi-Ma'had</div>
+    <p class="footer-tagline">Pusat Informasi Mahadian's &nbsp;•&nbsp; HPIM Mesir</p>
+    <div class="footer-socials">
+      <a href="https://instagram.com/hpimmesir"        class="social-btn ig" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
+      <a href="https://wa.me/6285156579101"            class="social-btn wa" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      <a href="https://youtube.com/@HPIMMESIROFFICIAL" class="social-btn yt" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i> YouTube</a>
+    </div>
+    <div class="footer-divider"></div>
+    <p class="footer-copy">© 2026 HPIM Mesir &nbsp;•&nbsp; Semua hak dilindungi</p>
+  </div>
+</footer>
+
+<button class="btt" id="btt" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+/* ================================================================
+   DATA
+   Setiap mapel punya: name, t1 (link Term 1), t2 (link Term 2)
+   Biarkan '' jika file belum tersedia.
+   Contoh isi: t1: 'https://drive.google.com/file/d/XXXX/view'
+================================================================ */
+var ICON = {
+  'Tajwid':'📖','Fiqih':'⚖️','Ushuluddin':'🕌','Lughah Arabiyah':'🗣️',
+  'Riyadhiyat':'📐','Ulum':'🔬','Bahasa Inggris':'🌐',
+  "Dirasat Ijtima'iyah":'🌍','Komputer':'💻','Tsaqafah':'📚','Tsaqofah':'📚',
+  'Tauhid':'🌙','Tafsir':'📜','Hadits':'📝','Nahwu':'✍️','Shorof':'🔤',
+  'Balaghah':'🖋️','Adab Nusus':'📕','Arudh':'🎵','Maharat':'🎯',
+  'Tarikh':'🏛️','Geografi':'🗺️','Mantiq':'🧠','Matematika':'🔢',
+  'Tarbiyah Fanniyah':'🎨','Ulum Mutakamilah':'🔭',
+  'Matematika Praktik':'🧮','Fisika':'⚗️','Kimia':'🧪',
+  'Biologi':'🌿','Mawarits':'💰'
+};
+function ic(n){ return ICON[n] || '📄'; }
+
+/* helper: buat objek mapel */
+function m(name, t1, t2){ return { name:name, t1:t1||'', t2:t2||'' }; }
+
+var DATA = [
+  /* ── Idadi 1 ───────────────────────────────── */
+  { id:'s1', label:'📖 Idadi 1', type:'single', list:[
+    m('Tajwid'),
+    m('Fiqih', 
+    'https://drive.google.com/file/d/1meICcrT4ziPO1tv8o_jZ3JSGcWPUgD0P/view?usp=drive_link',
+    'https://drive.google.com/file/d/1SIDMcKtTE6TcoAGQeBwqJbIae2-PnnZ4/view?usp=drive_link'
+  ),
+    m('Ushuluddin',
+    'https://drive.google.com/file/d/16J7IqHcPdddakLVKTOsIAgDUhOPKGOGz/view?usp=drive_link',
+    'https://drive.google.com/file/d/13JoMz-XEK00Jgyf1BLuIaNZrzT4PEM1s/view?usp=drive_link'
+    ),
+    m('Lughah Arabiyah',
+      'https://drive.google.com/file/d/1kF2ff8DANn_sqTRcqj3T_2LdUTUtCuyN/view?usp=drive_link'
+    ),
+    m('Riyadhiyat'),
+    m('Ulum'),
+    m('Bahasa Inggris'),
+    m("Dirasat Ijtima'iyah"),
+    m('Komputer')
+  ]},
+  /* ── Idadi 2 ───────────────────────────────── */
+  { id:'s2', label:'📖 Idadi 2', type:'single', list:[
+    m('Tajwid'),
+    m('Fiqih'),
+    m('Ushuluddin'),
+    m('Lughah Arabiyah'),
+    m('Riyadhiyat'),
+    m('Ulum'),
+    m('Bahasa Inggris'),
+    m("Dirasat Ijtima'iyah"),
+    m('Komputer')
+  ]},
+  /* ── Idadi 3 ───────────────────────────────── */
+  { id:'s3', label:'📖 Idadi 3', type:'single', list:[
+    m('Tajwid'),
+    m('Fiqih'),
+    m('Ushuluddin'),
+    m('Lughah Arabiyah'),
+    m('Tsaqafah'),
+    m('Riyadhiyat'),
+    m('Ulum'),
+    m('Bahasa Inggris'),
+    m("Dirasat Ijtima'iyah"),
+    m('Komputer')
+  ]},
+  /* ── Tsanawi 1 ─────────────────────────────── */
+  { id:'s4', label:'📖 Tsanawi 1', type:'jurusan',
+    adabi:[
+      m('Tajwid'),
+      m('Fiqih'),
+      m('Tauhid'),
+      m('Tafsir'),
+      m('Hadits'),
+      m('Nahwu'),
+      m('Shorof'),
+      m('Balaghah'),
+      m('Adab Nusus'),
+      m('Arudh'),
+      m('Maharat'),
+      m('Tarikh'),
+      m('Geografi'),
+      m('Tsaqofah'),
+      m('Bahasa Inggris'),
+      m('Mantiq'),m('Komputer')
+    ],
+    ilmi:[
+      m('Fiqih'),
+      m('Tauhid'),
+      m('Tafsir'),
+      m('Hadits'),
+      m('Nahwu'),
+      m('Shorof'),
+      m('Balaghah'),
+      m('Adab Nusus'),
+      m('Maharat'),
+      m('Tsaqofah'),
+      m('Bahasa Inggris'),
+      m('Komputer'),
+      m('Matematika'),
+      m('Tarbiyah Fanniyah'),
+      m('Ulum Mutakamilah')
+    ]
+  },
+  /* ── Tsanawi 2 ─────────────────────────────── */
+  { id:'s5', label:'📖 Tsanawi 2', type:'jurusan',
+    adabi:[
+      m('Tajwid'),
+      m('Fiqih'),
+      m('Tauhid'),
+      m('Tafsir'),
+      m('Hadits'),
+      m('Nahwu'),
+      m('Shorof'),
+      m('Balaghah'),
+      m('Adab Nusus'),
+      m('Arudh'),
+      m('Maharat'),
+      m('Tarikh'),
+      m('Geografi'),
+      m('Bahasa Inggris'),
+      m('Mantiq'),
+      m('Komputer')
+    ],
+    ilmi:[
+      m('Fiqih'),
+      m('Tauhid'),
+      m('Tafsir'),
+      m('Hadits'),
+      m('Nahwu'),
+      m('Shorof'),
+      m('Balaghah'),
+      m('Adab Nusus'),
+      m('Maharat'),
+      m('Bahasa Inggris'),
+      m('Komputer'),
+      m('Matematika'),
+      m('Matematika Praktik'),
+      m('Fisika'),
+      m('Tarbiyah Fanniyah'),
+      m('Kimia'),
+      m('Biologi')
+    ]
+  },
+  /* ── Tsanawi 3 ─────────────────────────────── */
+  { id:'s6', label:'📖 Tsanawi 3', type:'jurusan',
+    adabi:[
+      m('Tajwid'),
+      m('Fiqih'),
+      m('Mawarits'),
+      m('Tauhid'),
+      m('Tafsir'),
+      m('Hadits'),
+      m('Nahwu'),
+      m('Shorof'),
+      m('Balaghah'),
+      m('Adab Nusus'),
+      m('Arudh'),
+      m('Maharat'),
+      m('Tarikh'),
+      m('Geografi'),
+      m('Bahasa Inggris'),
+      m('Komputer')
+    ],
+    ilmi:[
+      m('Fiqih'),
+      m('Mawarits'),
+      m('Tauhid'),
+      m('Tafsir'),
+      m('Hadits'),
+      m('Nahwu'),
+      m('Shorof'),
+      m('Balaghah'),
+      m('Adab Nusus'),
+      m('Maharat'),
+      m('Bahasa Inggris'),
+      m('Komputer'),
+      m('Kimia'),
+      m('Biologi'),
+      m('Matematika'),
+      m('Fisika')
+    ]
+  }
+];
+
+/* ================================================================
+   RENDER HELPERS
+================================================================ */
+function buildTermItem(subjectName, termNum, link) {
+  var cls     = link ? 'available' : 'unavailable';
+  var termCls = termNum === 1 ? 't1' : 't2';
+  var label   = 'Term ' + termNum;
+
+  var actions = link
+    ? '<span class="pl-tag tag-pdf">PDF</span>'
+      + '<button class="btn-copy" data-link="' + link + '">'
+      + '<i class="fa-solid fa-link"></i><span class="copy-tip">Tersalin!</span>'
+      + '</button>'
+    : '<span class="pl-tag tag-unavail">Segera</span>';
+
+  return '<div class="term-item ' + cls + ' ' + termCls + '"'
+    + ' data-name="' + subjectName.toLowerCase() + '"'
+    + ' data-link="' + link + '">'
+    + '<span class="term-badge">' + label + '</span>'
+    + '<div class="term-info">'
+    +   '<div class="term-title">' + subjectName + ' — ' + label + '</div>'
+    +   '<div class="term-sub">' + (link ? 'Klik untuk membuka file' : 'Segera tersedia') + '</div>'
+    + '</div>'
+    + '<div class="term-actions">' + actions
+    +   '<i class="fa-solid fa-chevron-right term-arrow"></i>'
+    + '</div>'
+    + '</div>';
+}
+
+function buildSubjectGroup(subj, num) {
+  var t1avail = subj.t1 ? 1 : 0;
+  var t2avail = subj.t2 ? 1 : 0;
+  var total   = t1avail + t2avail;
+  var availLabel = total === 2 ? '2/2' : total === 1 ? '1/2' : '0/2';
+
+  return '<div class="subj-group" data-subj="' + subj.name.toLowerCase() + '">'
+    + '<div class="subj-header">'
+    +   '<div class="subj-num">' + num + '</div>'
+    +   '<span class="subj-icon">' + ic(subj.name) + '</span>'
+    +   '<span class="subj-name">' + subj.name + '</span>'
+    +   '<div class="subj-meta">'
+    +     '<span class="subj-avail">' + availLabel + ' file</span>'
+    +     '<i class="fa-solid fa-chevron-down subj-chevron"></i>'
+    +   '</div>'
+    + '</div>'
+    + '<div class="subj-body">'
+    +   buildTermItem(subj.name, 1, subj.t1)
+    +   buildTermItem(subj.name, 2, subj.t2)
+    + '</div>'
+    + '</div>';
+}
+
+function buildPlaylist(list, cls, id) {
+  var html = '<div class="' + cls + '" id="' + id + '">';
+  for (var i = 0; i < list.length; i++) {
+    html += buildSubjectGroup(list[i], i + 1);
+  }
+  html += '</div>';
+  return html;
+}
+
+function buildSection(sec, idx) {
+  var body, countLabel;
+
+  if (sec.type === 'single') {
+    body       = buildPlaylist(sec.list, 's-playlist', 'pl-' + sec.id);
+    countLabel = sec.list.length + ' mapel';
+  } else {
+    body = '<div class="jurusan-tabs" data-sec="' + sec.id + '">'
+      + '<button class="j-btn active" data-j="adabi">✏️ Adabi <small>(' + sec.adabi.length + ')</small></button>'
+      + '<button class="j-btn" data-j="ilmi">🔬 Ilmi <small>(' + sec.ilmi.length + ')</small></button>'
+      + '</div>'
+      + buildPlaylist(sec.adabi, 'j-playlist active', 'pl-' + sec.id + '-adabi')
+      + buildPlaylist(sec.ilmi,  'j-playlist',        'pl-' + sec.id + '-ilmi');
+    countLabel = (sec.adabi.length + sec.ilmi.length) + ' mapel';
+  }
+
+  return '<div class="sec-wrap open" data-semester="' + sec.id
+    + '" style="animation-delay:' + (idx * 0.05) + 's">'
+    + '<div class="sec-header">'
+    +   '<div class="sec-title-group">'
+    +     '<span class="sec-title">' + sec.label + '</span>'
+    +     '<span class="sec-count">' + countLabel + '</span>'
+    +   '</div>'
+    +   '<div class="sec-line"></div>'
+    +   '<i class="fa-solid fa-chevron-down sec-chevron"></i>'
+    + '</div>'
+    + '<div class="sec-body">' + body + '</div>'
+    + '</div>';
+}
+
+/* ── RENDER ALL ─────────────── */
+var html = '';
+for (var i = 0; i < DATA.length; i++) html += buildSection(DATA[i], i);
+document.getElementById('sections').innerHTML = html;
+
+/* ── STATS ──────────────────── */
+var totalFiles = 0, availFiles = 0;
+for (var i = 0; i < DATA.length; i++) {
+  var sec  = DATA[i];
+  var list = sec.type === 'single' ? sec.list : sec.adabi.concat(sec.ilmi);
+  for (var j = 0; j < list.length; j++) {
+    totalFiles += 2;
+    if (list[j].t1) availFiles++;
+    if (list[j].t2) availFiles++;
+  }
+}
+document.getElementById('totalCount').innerHTML = '<i class="fa-solid fa-book-open"></i> '
+  + (totalFiles / 2) + ' Mapel · ' + totalFiles + ' File';
+document.getElementById('statAvail').textContent   = availFiles;
+document.getElementById('statPending').textContent = totalFiles - availFiles;
+
+/* ================================================================
+   EVENT DELEGATION — semua klik ditangani di sini
+================================================================ */
+document.getElementById('sections').addEventListener('click', function(e) {
+
+  /* 1. ACCORDION SECTION */
+  var secH = e.target.closest('.sec-header');
+  if (secH && !e.target.closest('.jurusan-tabs')) {
+    var wrap = secH.closest('.sec-wrap');
+    if (wrap.classList.contains('open')) {
+      wrap.classList.remove('open');
+      wrap.classList.add('closed');
+    } else {
+      wrap.classList.remove('closed');
+      wrap.classList.add('open');
+    }
+    return;
+  }
+
+  /* 2. JURUSAN TAB */
+  var jBtn = e.target.closest('.j-btn');
+  if (jBtn) {
+    var tabs  = jBtn.closest('.jurusan-tabs');
+    var secId = tabs.getAttribute('data-sec');
+    var j     = jBtn.getAttribute('data-j');
+    tabs.querySelectorAll('.j-btn').forEach(function(b){ b.classList.remove('active'); });
+    jBtn.classList.add('active');
+    var adabi = document.getElementById('pl-' + secId + '-adabi');
+    var ilmi  = document.getElementById('pl-' + secId + '-ilmi');
+    if (adabi) adabi.classList.toggle('active', j === 'adabi');
+    if (ilmi)  ilmi.classList.toggle('active',  j === 'ilmi');
+    return;
+  }
+
+  /* 3. SUBJECT GROUP TOGGLE */
+  var subjH = e.target.closest('.subj-header');
+  if (subjH && !e.target.closest('.btn-copy')) {
+    var body = subjH.nextElementSibling;
+    var isOpen = body.classList.contains('open');
+    body.classList.toggle('open', !isOpen);
+    subjH.classList.toggle('open', !isOpen);
+    return;
+  }
+
+  /* 4. COPY LINK */
+  var copyBtn = e.target.closest('.btn-copy');
+  if (copyBtn) {
+    e.stopPropagation();
+    var link = copyBtn.getAttribute('data-link');
+    if (!link) return;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(link).then(function(){ flash(copyBtn); });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = link; ta.style.cssText = 'position:fixed;opacity:0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); flash(copyBtn); } catch(err){}
+      document.body.removeChild(ta);
+    }
+    return;
+  }
+
+  /* 5. TERM ITEM CLICK */
+  var termItem = e.target.closest('.term-item');
+  if (termItem && termItem.classList.contains('available')) {
+    var url = termItem.getAttribute('data-link');
+    if (url) window.open(url, '_blank', 'noopener');
+  }
+});
+
+function flash(btn) {
+  btn.classList.add('copied');
+  setTimeout(function(){ btn.classList.remove('copied'); }, 2000);
+}
+
+/* ================================================================
+   TOGGLE ALL SECTIONS
+================================================================ */
+var allOpen = true;
+document.getElementById('btnToggleAll').addEventListener('click', function() {
+  allOpen = !allOpen;
+  document.querySelectorAll('.sec-wrap').forEach(function(w) {
+    w.classList.toggle('open',   allOpen);
+    w.classList.toggle('closed', !allOpen);
+  });
+  this.innerHTML = allOpen
+    ? '<i class="fa-solid fa-compress"></i> Tutup Semua'
+    : '<i class="fa-solid fa-expand"></i> Buka Semua';
+});
+
+/* ================================================================
+   FILTER TINGKAT
+================================================================ */
+document.querySelectorAll('.filter-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.getElementById('searchInput').value = '';
+    document.getElementById('noResult').style.display = 'none';
+
+    // restore all subj groups & term items
+    document.querySelectorAll('.subj-group').forEach(function(g){ g.style.display = ''; });
+    document.querySelectorAll('.term-item').forEach(function(t){ t.style.display = ''; });
+
+    document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+    this.classList.add('active');
+
+    var f = this.getAttribute('data-filter');
+    document.querySelectorAll('.sec-wrap').forEach(function(w) {
+      var show = (f === 'all') || (w.getAttribute('data-semester') === f);
+      w.style.display = show ? '' : 'none';
+      if (show) { w.classList.remove('closed'); w.classList.add('open'); }
+    });
+  });
+});
+
+/* ================================================================
+   SEARCH
+================================================================ */
+document.getElementById('searchInput').addEventListener('input', function() {
+  var q = this.value.trim().toLowerCase();
+
+  document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelector('[data-filter="all"]').classList.add('active');
+
+  // reset sec visibility
+  document.querySelectorAll('.sec-wrap').forEach(function(w){ w.style.display = ''; });
+  // show all j-playlist for search to work across jurusan
+  document.querySelectorAll('.j-playlist').forEach(function(pl){
+    pl.style.display = q ? 'flex' : '';
+    if (q) { pl.style.flexDirection = 'column'; pl.style.gap = '12px'; }
+  });
+
+  if (!q) {
+    document.querySelectorAll('.subj-group').forEach(function(g){ g.style.display = ''; });
+    document.getElementById('noResult').style.display = 'none';
+    return;
+  }
+
+  var anyVis = false;
+  document.querySelectorAll('.sec-wrap').forEach(function(wrap) {
+    var groups = wrap.querySelectorAll('.subj-group');
+    var secVis = false;
+    groups.forEach(function(grp) {
+      var name  = grp.getAttribute('data-subj') || '';
+      var match = name.indexOf(q) !== -1;
+      grp.style.display = match ? '' : 'none';
+      if (match) secVis = true;
+    });
+    wrap.style.display = secVis ? '' : 'none';
+    if (secVis) { wrap.classList.remove('closed'); wrap.classList.add('open'); anyVis = true; }
+  });
+
+  document.getElementById('noResult').style.display = anyVis ? 'none' : 'block';
+});
+
+// Saat search dihapus, kembalikan jurusan ke state semula
+document.getElementById('searchInput').addEventListener('change', function() {
+  if (!this.value.trim()) {
+    document.querySelectorAll('.j-playlist').forEach(function(pl){ pl.style.display = ''; });
+    document.querySelectorAll('.subj-group').forEach(function(g){ g.style.display = ''; });
+  }
+});
+
+/* ================================================================
+   BACK TO TOP
+================================================================ */
+var btt = document.getElementById('btt');
+window.addEventListener('scroll', function(){
+  btt.classList.toggle('visible', window.scrollY > 300);
+}, {passive:true});
+btt.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+</script>
+
+</body>
+</html>
