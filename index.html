@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi-Ma'had | Pusat Informasi Mahadian's</title>
+    <meta name="description" content="Website pusat informasi resmi Ma'had untuk seluruh pelajar di Ma'had.">
+    <meta name="author" content="HPIM Mesir">
+    <meta name="theme-color" content="#0F2A24">
+    <meta property="og:title"       content="Hi-Ma'had | Pusat Informasi Ma'hadians">
+    <meta property="og:description" content="Pusat informasi resmi Ma'had — akses layanan administrasi, akademik, dan pengumuman.">
+    <meta property="og:image"       content="https://jiung17-oss.github.io/HiMahadians/logo-hpim.png">
+    <meta property="og:url"         content="https://jiung17-oss.github.io/HiMahadians/">
+    <meta property="og:type"        content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏫</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ══════════════════════════════════════
+         SPLASH SCREEN / LOADING PAGE
+         ══════════════════════════════════════ -->
+    <div id="splash">
+        <div class="splash-inner">
+            <div class="splash-logo-wrap">
+                <img src="logo-hpim.png" alt="Logo HPIM"
+                     class="splash-logo"
+                     onerror="this.style.display='none';document.getElementById('splash-emoji').style.display='flex'">
+                <div class="splash-logo-fallback" id="splash-emoji">🏫</div>
+            </div>
+            <h1 class="splash-title">Hi-Ma'had</h1>
+            <p class="splash-sub">Pusat Informasi Mahadian's</p>
+            <div class="splash-dots">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         NAVBAR
+         ══════════════════════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="logo-hpim.png" alt="Logo HPIM" class="logo-img"
+                     onerror="this.style.display='none'">
+                <h2>Hi-Ma'had</h2>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#pengumuman">Pengumuman</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Buka menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ══════════════════════════════════════
+         HERO
+         ══════════════════════════════════════ -->
+    <header id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <span class="hero-badge"></i> HPIM Mesir</span>
+            <h1>Hai, Ma'hadians! 👋</h1>
+            <p class="subtitle">Website pusat informasi seputar Ma'had<br>untuk seluruh pelajar</p>
+            <a href="#services" class="btn-hero">
+                Jelajahi Sekarang <i class="fa-solid fa-compass"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ══════════════════════════════════════
+         INTRO + SEARCH
+         ══════════════════════════════════════ -->
+    <section class="intro">
+        <div class="container intro-inner">
+            <h2>Selamat datang di Pusat Informasi Ma'hadians</h2>
+            <p>Temukan berbagai informasi seputar Ma'had dengan cepat dan mudah</p>
+            <div class="search-wrapper">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="searchInput" class="search-input"
+                           placeholder="Cari layanan atau informasi..." autocomplete="off">
+                    <button class="search-clear" id="searchClear" aria-label="Hapus">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="search-results" id="searchResults"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         SERVICES — TAB SYSTEM
+         ══════════════════════════════════════ -->
+    <section id="services" class="services">
+        <div class="container">
+
+            <!-- ── MENU UTAMA ── -->
+            <div id="main-menu">
+                <div class="section-head">
+                    <h3>Saya ingin tau soal...</h3>
+                </div>
+                <div class="main-grid">
+
+                    <!-- Card Administrasi -->
+                   <div class="card" id="admin-card">
+                    <div class="card-icon-wrap">
+                        <div class="icon">📄</div>
+                        <i class="fa-solid fa-icon card-icon"></i>
+                    </div>
+                        <h4>Administrasi</h4>
+                        <p>Surat Tadarruj, Kerneh, Pengurusan Mafsul, dan administrasi lainnya.</p>
+                        <button class="btn-card menu-btn" data-target="sub-admin">
+                            Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Card Akademik -->
+                    <div class="card" id="akademik-card">
+                        <div class="card-icon-wrap">
+                            <div class="icon2">🎓</div>
+                            <i class="fa-solid fa-icon card-icon"></i>
+                        </div>
+                        <h4>Informasi Akademik</h4>
+                        <p>Jadwal ujian, kalender pendidikan, dan nilai pelajar.</p>
+                        <button class="btn-card menu-btn" data-target="sub-akademik">
+                            Lihat Detail <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ══════════════════════════════════
+                 SUB-MENU: ADMINISTRASI
+                 Level 1 → Pilih Banin / Banat
+                 ══════════════════════════════════ -->
+            <div id="sub-admin" class="sub-menu hidden">
+                <div class="sub-header">
+                    <button class="btn-back" data-back="main">
+                        <i class="fa-solid fa-arrow-left"></i> Kembali
+                    </button>
+                    <div class="sub-title-row">
+                        <div class="icon11">📄</div>
+                        <i class="fa-solid fa-icon sub-icon-title"></i>
+                        <div>
+                            <h3>Administrasi</h3>
+                            <p class="sub-desc">Pilih kategori Ma'had kamu</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Level 1: Banin & Banat -->
+                <div class="level1-grid" id="admin-level1">
+
+                    <div class="level1-card" id="banin-card">
+                        <div class="level1-card-inner">
+                            <div class="level1-icon-wrap banin">
+                                <i class="fa-solid fa-person"></i>
+                            </div>
+                            <div class="level1-info">
+                                <h4>Ma'had Banin</h4>
+                                <p>6 Tips tersedia</p>
+                            </div>
+                            <i class="fa-solid fa-chevron-down level1-chevron" id="chevron-banin"></i>
+                        </div>
+
+                        <!-- Level 2: Sub-cards Banin -->
+                        <div class="level2-list hidden" id="sub-banin">
+                            <a href="tadarruj.html" class="service-item">
+                                <div class="service-icon-wrap">
+                                    <i class="fa-solid fa-book-open-reader"></i>
+                                </div>
+                                <div class="service-info">
+                                    <span class="service-name">Pengurusan Tadarruj Dirosi</span>
+                                    <span class="service-hint">Alur Pembuatan Tadarruj Dirosi</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-right service-arrow"></i>
+                            </a>
+                            <a href="mafsul.html" class="service-item">
+                                <div class="service-icon-wrap">
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                </div>
+                                <div class="service-info">
+                                    <span class="service-name">Pengurusan Mafsul</span>
+                                    <span class="service-hint">Pengurusan bagi pelajar yang Mafsul</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-right service-arrow"></i>
+                            </a>
+                            <a href="kerneh.html" class="service-item">
+                                <div class="service-icon-wrap">
+                                    <i class="fa-solid fa-id-card"></i>
+                                </div>
+                                <div class="service-info">
+                                    <span class="service-name">Pembuatan Kerneh</span>
+                                    <span class="service-hint">Kartu identitas resmi ma'had</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-right service-arrow"></i>
+                            </a>
+                            <a href="agazah.html" class="service-item">
+                                <div class="service-icon-wrap">
+                                    <i class="fa-solid fa-calendar-check"></i>
+                                </div>
+                                <div class="service-info">
+                                    <span class="service-name">Surat Agazah</span>
+                                    <span class="service-hint">Pengajuan surat izin cuti</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-right service-arrow"></i>
+                            </a>
+                            <a href="legalisir.html" class="service-item">
+                                <div class="service-icon-wrap">
+                                    <i class="fa-solid fa-stamp"></i>
+                                </div>
+                                <div class="service-info">
+                                    <span class="service-name">Legalisir Tadarruj</span>
+                                    <span class="service-hint">Proses legalisir surat tadarruj</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-right service-arrow"></i>
+                            </a>
+                            <a href="elektronik.html" class="service-item">
+                                <div class="service-icon-wrap">
+                                    <i class="fa-solid fa-laptop"></i>
+                                </div>
+                                <div class="service-info">
+                                    <span class="service-name">Tadarruj Elektronik</span>
+                                    <span class="service-hint">Alur pengurusan tadarruj Elektronik</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-right service-arrow"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="level1-card" id="banat-card">
+                        <div class="level1-card-inner">
+                            <div class="level1-icon-wrap banat">
+                                <i class="fa-solid fa-person-dress"></i>
+                            </div>
+                            <div class="level1-info">
+                                <h4>Ma'had Banat</h4>
+                                <p>5 Tips tersedia</p>
+                            </div>
+                            <i class="fa-solid fa-chevron-down level1-chevron" id="chevron-banat"></i>
+                        </div>
+
+                        <!-- Level 2: Sub-cards Banat -->
+                        <div class="level2-list hidden" id="sub-banat">
+                            <a href="tadarrujbt.html" class="service-item">
+                                <div class="service-icon-wrap">
+                                    <i class="fa-solid fa-book-open-reader"></i>
+                                </div>
+                                <div class="service-info">
+                                    <span class="service-name">Pengurusan Tadarruj Dirosi</span>
+                                    <span class="service-hint">Ajukan kenaikan tingkat belajar</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-right service-arrow"></i>
+                            </a>
+                            <a href="kernehbt.html" class="service-item">
+                                <div class="service-icon-wrap">
+                                    <i class="fa-solid fa-id-card"></i>
+                                </div>
+                                <div class="service-info">
+                                    <span class="service-name">Pembuatan Kerneh</span>
+                                    <span class="service-hint">Kartu identitas resmi ma'had</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-right service-arrow"></i>
+                            </a>
+                            <a href="agazahbt.html" class="service-item">
+                                <div class="service-icon-wrap">
+                                    <i class="fa-solid fa-calendar-check"></i>
+                                </div>
+                                <div class="service-info">
+                                    <span class="service-name">Surat Agazah</span>
+                                    <span class="service-hint">Pengajuan surat izin cuti</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-right service-arrow"></i>
+                            </a>
+                            <a href="elektronikbt.html" class="service-item">
+                                <div class="service-icon-wrap">
+                                    <i class="fa-solid fa-laptop"></i>
+                                </div>
+                                <div class="service-info">
+                                    <span class="service-name">Tadarruj Elektronik</span>
+                                    <span class="service-hint">Proses pembuatan Tadarruj Elektronik</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-right service-arrow"></i>
+                            </a>
+                            <a href="legalisirbt.html" class="service-item">
+                                <div class="service-icon-wrap">
+                                    <i class="fa-solid fa-stamp"></i>
+                                </div>
+                                <div class="service-info">
+                                    <span class="service-name">Legalisir Tadarruj</span>
+                                    <span class="service-hint">Proses legalisir surat tadarruj</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-right service-arrow"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ══════════════════════════════════
+                 SUB-MENU: INFORMASI AKADEMIK
+                 ══════════════════════════════════ -->
+            <div id="sub-akademik" class="sub-menu hidden">
+                <div class="sub-header">
+                    <button class="btn-back" data-back="main">
+                        <i class="fa-solid fa-arrow-left"></i> Kembali
+                    </button>
+                    <div class="sub-title-row">
+                        <i class="fa-solid fa-graduation-cap sub-icon-title"></i>
+                        <div>
+                            <h3>Informasi Akademik</h3>
+                            <p class="sub-desc">Akses semua sumber daya akademik Ma'had</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="akademik-grid">
+
+                    <a href="muqorror2.html" class="akademik-card">
+                        <div class="akademik-icon-wrap">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <div class="akademik-info">
+                            <h5>Muqorror Ma'had</h5>
+                            <p>Kurikulum buku seluruh mata pelajaran</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-right akademik-arrow"></i>
+                    </a>
+
+                    <a href="rekaman2.html" class="akademik-card">
+                        <div class="akademik-icon-wrap">
+                            <i class="fa-solid fa-circle-play"></i>
+                        </div>
+                        <div class="akademik-info">
+                            <h5>Rekaman Mudzakarah</h5>
+                            <p>Arsip video rekaman mudzakarah kitab Ma'had</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-right akademik-arrow"></i>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         PENGUMUMAN
+         ══════════════════════════════════════ -->
+    <section id="pengumuman" class="pengumuman">
+        <div class="container">
+            <div class="section-head">
+                <h3>Pengumuman Terbaru</h3>
+            </div>
+            <ul class="ann-list">
+                <li class="ann-item">
+                    <div class="ann-left">
+                        <span class="ann-badge new">Baru</span>
+                        <span class="ann-title">Pendaftaran ujian Musabaqah Tahun 2026 Dibuka</span>
+                    </div>
+                    <span class="ann-date"><i class="fa-regular fa-calendar"></i> 16 Maret 2026</span>
+                </li>
+                <li class="ann-item">
+                    <div class="ann-left">
+                        <span class="ann-badge info">Info</span>
+                        <span class="ann-title">Jadwal Ujian Termin 2 tahun ajaran 2025/2026</span>
+                    </div>
+                    <span class="ann-date"><i class="fa-regular fa-calendar"></i> 6 April 2026</span>
+                </li>
+                <li class="ann-item">
+                    <div class="ann-left">
+                        <span class="ann-badge kegiatan">Kegiatan</span>
+                        <span class="ann-title">Mudzakarah bersama Akan Segera Dilaksanakan</span>
+                    </div>
+                    <span class="ann-date"><i class="fa-regular fa-calendar"></i> 15 April 2026</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         KONTAK
+         ══════════════════════════════════════ -->
+    <section id="kontak" class="kontak">
+        <div class="container">
+            <div class="section-head">
+                <h3>Hubungi Kami</h3>
+            </div>
+            <div class="kontak-grid">
+                <div class="kontak-item">
+                    <a href="https://whatsapp.com/channel/0029VammGWOEquiTKxJTic0e" target="_blank" rel="noopener" aria-label="WhatsApp">
+                    <div class="kontak-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                    </a>
+                    <div>
+                        <h5>Saluran</h5>
+                        <p>HPIM Mesir</p>
+                    </div>
+                </div>
+                <div class="kontak-item">
+                    <div class="kontak-icon"><i class="fa-brands fa-instagram"></i></div>
+                    <div>
+                        <h5>Instagram</h5>
+                        <p>@hpimmesir</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         FOOTER
+         ══════════════════════════════════════ -->
+    <footer>
+        <div class="container footer-inner">
+            <p>© 2026, HPIM Mesir • Pusat Informasi Mahadian's</p>
+            <div class="footer-socials">
+                <a href="https://instagram.com/hpimmesir" target="_blank" rel="noopener" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/6285156579101" target="_blank" rel="noopener" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="https://youtube.com/@HPIMMESIROFFICIAL" target="_blank" rel="noopener" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
