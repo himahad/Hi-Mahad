@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekaman Mudzakarah | Hi-Ma'had</title>
+    <meta name="description" content="Arsip rekaman mudzakarah Ma'had yang bisa diakses kapan saja.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎥</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+    --bg:          #0F2A24;
+    --bg-card:     #163322;
+    --bg-card2:    #1C3F2C;
+    --border:      #2E5A4A;
+    --border-s:    rgba(46, 90, 74, 0.5);
+    --gold:        #F4E17C;
+    --gold-l:      #F5DC7A;
+    --gold-pale:   rgba(244, 225, 124, 0.08);
+    --gold-glow:   rgba(244, 225, 124, 0.15);
+    --gold-border: rgba(244, 225, 124, 0.22);
+    --text:        #E0EBE5;
+    --muted:       #7AADA0;
+    --faint:       #3F6E5E;
+    --yt-red:      #FF0000;
+    --yt-bg:       rgba(255,0,0,0.09);
+    --yt-border:   rgba(255,0,0,0.18);
+    --yt-muted:    rgba(255,80,80,0.75);
+}
+
+::-webkit-scrollbar{width:7px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px}
+::-webkit-scrollbar-thumb:hover{background:var(--gold)}
+*{scrollbar-width:thin;scrollbar-color:var(--border) var(--bg)}
+
+html{scroll-behavior:smooth}
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh}
+.container{max-width:960px;margin:0 auto;padding:0 20px}
+
+/* ══════════════════════════════════════════════
+TOPBAR — IDENTIK
+══════════════════════════════════════════════ */
+.topbar{
+    background:rgba(11,28,20,0.97);
+    border-bottom:1px solid var(--border-s);
+    backdrop-filter:blur(14px);
+    position:sticky;
+    top:0;
+    z-index:200;
+    padding:13px 0;
+}
+
+.topbar-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px}
+    
+.btn-back-nav{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    background:var(--gold-pale);
+    border:1px solid rgba(232,200,74,0.2);
+    color:var(--gold);
+    border-radius:99px;
+    padding:7px 16px;
+    font-size:.82rem;
+    font-weight:600;
+    cursor:pointer;
+    text-decoration:none;
+    transition:background .2s,transform .2s;
+    font-family:'Nunito',sans-serif;
+}
+
+.btn-back-nav:hover{
+    background:var(--gold-glow);
+    transform:translateX(-2px)}
+    
+.topbar-logo{
+    font-family:'Poppins',sans-serif;
+    font-weight:700;
+    color:var(--gold);
+    font-size:1.2rem;
+    text-decoration:none;
+}
+.topbar-badge{
+    background:var(--yt-bg);
+    border:1px solid var(--yt-border);
+    color:var(--yt-muted);
+    font-size:.7rem;
+    font-weight:700;
+    padding:4px 10px;
+    border-radius:99px;
+    letter-spacing:.7px;
+    text-transform:uppercase;
+}
+
+/* ══════════════════════════════════════════════
+HERO — IDENTIK
+══════════════════════════════════════════════ */
+.hero{
+    padding:40px 0 30px;
+    text-align:center;
+    position:relative;
+    overflow:hidden}
+    
+.hero::before{
+    content:’’;
+    position:absolute;
+    inset:0;
+    background:
+    radial-gradient(ellipse 75% 60% at 50% 0%,rgba(244,225,124,0.07) 0%,transparent 65%),
+    radial-gradient(ellipse 45% 35% at 15% 100%,rgba(46,90,74,0.25) 0%,transparent 60%);
+    pointer-events:none;
+}
+
+.hero::after{
+    content:’’;
+    position:absolute;
+    inset:0;
+    background-image:radial-gradient(circle at 1px 1px,rgba(244,225,124,0.045) 1px,transparent 0);
+    background-size:28px 28px;
+    pointer-events:none;
+}
+
+.hero-inner{
+    position:relative;
+    z-index:1}
+    
+.hero-icon-wrap{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:76px;
+    height:76px;
+    background:var(--gold-pale);
+    border:1px solid var(--gold-border);
+    border-radius:22px;
+    font-size:2.2rem;
+    margin-bottom:22px;
+    animation:popIn .55s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+
+.hero-eyebrow{
+    font-family:'Nunito',sans-serif;
+    font-size:.73rem;
+    font-weight:700;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    color:var(--gold);
+    opacity:.75;
+    margin-bottom:12px;
+    animation:fadeUp .5s .1s ease both;
+}
+
+.hero h1{
+    font-family:'Poppins',sans-serif;
+    font-size:2.3rem;
+    color:#fff;
+    margin-bottom:10px;
+    animation:fadeUp .5s .1s ease both}
+    
+.hero h1 span{color:var(--gold)}
+.hero .lead{
+    font-size:.93rem;
+    color:var(--muted);
+    max-width:480px;
+    margin:0 auto 26px;
+    animation:fadeUp .5s .18s ease both}
+    
+.hero-pills{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    flex-wrap:wrap;
+    animation:fadeUp .5s .25s ease both}
+    
+.pill{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:5px 13px;
+    border-radius:99px;
+    font-size:.77rem;
+    font-weight:600}
+    
+.pill-yt  {
+    background:var(--yt-bg);
+    color:var(--yt-muted);
+    border:1px solid var(--yt-border)}
+    
+.pill-gold{
+    background:var(--gold-pale);
+    color:var(--gold);
+    border:1px solid rgba(232,200,74,.2)}
+    
+.pill-count{
+    background:rgba(52,211,153,.08);
+    color:#5ECBA1;
+    border:1px solid rgba(52,211,153,.15)}
+
+/* ══════════════════════════════════════════════
+TOOLBAR
+══════════════════════════════════════════════ */
+.toolbar{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+    animation:fadeUp .4s .3s ease both;
+}
+.search-box{
+    display:flex;
+    align-items:center;
+    gap:10px;flex:1;
+    min-width:200px;
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:10px 16px;
+    transition:border-color .2s,box-shadow .2s;
+}
+
+.search-box:focus-within{
+    border-color:rgba(232,200,74,.3);
+    box-shadow:0 0 0 3px rgba(232,200,74,.06)}
+    
+.search-box i{
+    color:var(--faint);
+    font-size:.9rem}
+    
+.search-box input{
+    flex:1;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-family:'Poppins',sans-serif;
+    font-size:.88rem;
+    color:var(--text);
+}
+
+.search-box input::placeholder{color:var(--faint)}
+
+/* Sort dropdown */
+.sort-wrap{position:relative}
+.sort-select{
+    appearance:none;
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    color:var(--muted);
+    border-radius:10px;
+    padding:9px 34px 9px 14px;
+    font-size:.78rem;
+    font-weight:600;
+    font-family:'Poppins',sans-serif;
+    cursor:pointer;
+    transition:border-color .2s,color .2s;
+    outline:none;
+}
+
+.sort-select:focus{
+    border-color:rgba(232,200,74,.3);
+    color:var(--gold)}
+    
+.sort-wrap::after{
+    content:’\f107’;
+    font-family:'Font Awesome 6 Free';
+    font-weight:900;
+    position:absolute;
+    right:12px;
+    top:50%;
+    transform:translateY(-50%);
+    color:var(--faint);
+    font-size:.8rem;
+    pointer-events:none;
+}
+
+.filter-tabs{
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+    width:100%}
+    
+.filter-btn{
+    padding:7px 13px;
+    border-radius:8px;
+    font-size:.75rem;
+    font-weight:600;
+    border:1px solid var(--border);
+    background:transparent;
+    color:var(--muted);
+    cursor:pointer;
+    font-family:'Poppins',sans-serif;
+    transition:all .2s;
+}
+.filter-btn:hover{
+    border-color:rgba(232,200,74,.3);
+    color:var(--gold)}
+    
+.filter-btn.active{
+    background:var(--gold-pale);
+    border-color:rgba(232,200,74,.3);
+    color:var(--gold)}
+
+/* ══════════════════════════════════════════════
+SECTION LABEL
+══════════════════════════════════════════════ */
+.section-label{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:16px}
+    
+.section-title-wrap{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    white-space:nowrap}
+    
+.section-title-wrap h2{
+    font-family:'Nunito',sans-serif;
+    font-size:1.2rem;
+    color:#fff}
+    
+.section-count{
+    font-size:.72rem;
+    font-weight:700;
+    padding:3px 9px;
+    border-radius:99px;
+    background:var(--gold-pale);
+    color:var(--gold);
+}
+
+.section-line{
+    flex:1;
+    height:1px;
+    background:linear-gradient(90deg,var(--border),transparent)}
+    
+.playlist-wrap{
+    margin-bottom:36px;
+    animation:fadeUp .4s .35s ease both}
+
+/* ══════════════════════════════════════════════
+VIDEO CARD — YouTube-style thumbnail
+══════════════════════════════════════════════ */
+.playlist{
+    display:flex;
+    flex-direction:column;
+    gap:10px}
+
+.vid-item{
+    display:flex;
+    align-items:stretch;
+    gap:0;
+    background:var(--bg-card);
+    border:1px solid var(--border-s);
+    border-radius:14px;
+    overflow:hidden;
+    cursor:pointer;
+    text-decoration:none;
+    transition:transform .25s,box-shadow .25s,border-color .25s,background .25s;
+    position:relative;
+}
+.vid-item::before{
+    content:’’;
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    width:3px;
+    background:var(--border);
+    transition:background .25s;
+    border-radius:3px 0 0 3px;
+    z-index:1;
+}
+
+.vid-item:hover{
+    transform:translateX(5px);
+    box-shadow:0 8px 28px rgba(0,0,0,.35);
+    border-color:rgba(255,80,80,.25);
+    background:var(--bg-card2);
+}
+.vid-item:hover::before{
+    background:var(--yt-red)}
+
+/* ── Thumbnail YouTube-style (16:9) ── */
+.vid-thumb{
+    position:relative;
+    width:160px;
+    min-width:160px;
+/* 16:9 = height = width * 9/16 */
+    aspect-ratio:16/9;
+    background:#000;
+    overflow:hidden;
+    flex-shrink:0;
+    align-self:stretch;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.vid-thumb img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .35s ease,filter .35s ease;
+}
+.vid-item:hover .vid-thumb img{
+    transform:scale(1.06);
+    filter:brightness(0.7);
+}
+
+/* Skeleton loader untuk thumbnail */
+.vid-thumb.loading img{opacity:0}
+.vid-thumb.loading::after{
+    content:’’;
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,
+    rgba(46,90,74,0.4) 25%,
+    rgba(61,110,94,0.5) 50%,
+    rgba(46,90,74,0.4) 75%);
+    background-size:200% 100%;
+    animation:shimmer 1.4s infinite;
+}
+
+/* Play overlay */
+.play-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(0,0,0,0);
+    transition:background .25s;
+}
+.vid-item:hover .play-overlay{
+    background:rgba(0,0,0,.2)}
+
+.play-btn{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:rgba(255,0,0,.9);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    transform:scale(.6);
+    transition:opacity .25s,transform .25s;
+    box-shadow:0 4px 16px rgba(0,0,0,.5);
+}
+
+.play-btn i{
+    color:#fff;
+    font-size:.9rem;
+    margin-left:3px}
+    
+.vid-item:hover .play-btn{
+    opacity:1;
+    transform:scale(1)}
+
+/* Duration badge */
+.vid-dur{
+    position:absolute;
+    bottom:5px;
+    right:5px;
+    background:rgba(0,0,0,.82);
+    color:#fff;
+    font-size:.63rem;
+    font-weight:700;
+    padding:2px 6px;
+    border-radius:4px;
+    letter-spacing:.3px;
+}
+
+/* ── Card Info ── */
+.vid-info{
+    flex:1;min-width:0;
+    padding:14px 16px 14px 14px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:4px;
+}
+.vid-num{
+    font-size:.67rem;
+    font-weight:700;
+    color:var(--faint);
+    text-transform:uppercase;
+    letter-spacing:.8px;
+}
+.vid-title{
+    font-size:.88rem;
+    font-weight:600;
+    color:var(--text);
+    line-height:1.4;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+    transition:color .2s;
+}
+.vid-item:hover .vid-title{color:#fff}
+.vid-meta{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:2px}
+    
+.vid-meta-item{
+    font-size:.72rem;
+    color:var(--muted);
+    display:flex;
+    align-items:center;
+    gap:4px;
+}
+
+.vid-tag{
+    font-size:.62rem;
+    font-weight:700;
+    padding:2px 8px;
+    border-radius:99px;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    flex-shrink:0;
+}
+
+.tag-new {
+    background:rgba(232,200,74,.12);
+    color:var(--gold)}
+.tag-live{
+    background:rgba(255,0,0,.12);
+    color:var(--yt-muted)}
+
+/* ── Action buttons (copy link + arrow) ── */
+.vid-actions{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:0 14px 0 4px;
+    flex-shrink:0;
+}
+
+.btn-copy{
+    width:30px;
+    height:30px;
+    border-radius:8px;
+    background:rgba(46,90,74,0.6);
+    border:1px solid var(--border-s);
+    color:var(--faint);
+    font-size:.75rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:all .2s;
+    position:relative;
+}
+
+.btn-copy:hover{
+    background:var(--gold-pale);
+    color:var(--gold);
+    border-color:var(--gold-border)}
+    
+.btn-copy .copy-tooltip{
+    position:absolute;
+    bottom:calc(100% + 6px);
+    right:0;
+    background:#1a3d2e;
+    border:1px solid var(--border);
+    color:var(--gold);
+    font-size:.65rem;
+    font-weight:700;
+    padding:3px 8px;
+    border-radius:6px;
+    white-space:nowrap;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .2s;
+    font-family:'Nunito',sans-serif;
+}
+
+.btn-copy.copied .copy-tooltip{opacity:1}
+.vid-arrow{
+    color:var(--faint);
+    font-size:.75rem;
+    flex-shrink:0;
+    transition:color .2s,transform .2s;
+}
+.vid-item:hover .vid-arrow{
+    color:var(--yt-muted);
+    transform:translateX(3px)}
+
+/* ── Empty state ── */
+.no-result{
+    text-align:center;
+    padding:52px 20px;
+    color:var(--muted);
+    font-size:.88rem;
+    display:none;
+}
+.no-result i{
+    font-size:2rem;
+    display:block;
+    margin-bottom:12px;
+    opacity:.4}
+
+/* ══════════════════════════════════════════════
+MODAL PLAYER
+══════════════════════════════════════════════ */
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.88);
+    z-index:500;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .25s ease;
+    backdrop-filter:blur(6px);
+}
+.modal-overlay.open{
+    opacity:1;
+    pointer-events:auto}
+
+.modal-box{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    width:100%;
+    max-width:780px;
+    overflow:hidden;
+    transform:scale(.94) translateY(16px);
+    transition:transform .28s cubic-bezier(0.34,1.2,0.64,1);
+    box-shadow:0 32px 80px rgba(0,0,0,.7);
+}
+
+.modal-overlay.open .modal-box{
+    transform:scale(1) translateY(0)}
+
+/* 16:9 iframe container */
+.modal-video{
+    position:relative;
+    width:100%;
+    padding-top:56.25%; /* 16:9 */
+    background:#000;
+}
+.modal-video iframe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    border:none;
+}
+
+/* Skeleton saat iframe load */
+.modal-video.loading::before{
+    content:’’;
+    position:absolute;
+    inset:0;
+    background:var(--bg);
+    z-index:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.modal-video.loading::after{
+    content:’’;
+    position:absolute;
+    width:48px;
+    height:48px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    z-index:2;
+    border:3px solid rgba(255,255,255,.1);
+    border-top-color:var(--yt-red);
+    border-radius:50%;
+    animation:spin .8s linear infinite;
+}
+
+.modal-info{
+    padding:18px 22px 20px}
+.modal-info-top{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    justify-content:space-between}
+    
+.modal-title{
+    font-size:.97rem;
+    font-weight:700;
+    color:#fff;
+    line-height:1.4;
+    flex:1;
+}
+
+.modal-close{
+    width:34px;
+    height:34px;
+    border-radius:8px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.1);
+    color:var(--muted);
+    font-size:.9rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    flex-shrink:0;
+    transition:background .2s,color .2s;
+}
+
+.modal-close:hover{
+    background:rgba(255,0,0,.15);
+    color:#ff6b6b}
+    
+.modal-meta{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-top:10px;
+    flex-wrap:wrap;
+}
+
+.modal-meta-item{
+    font-size:.75rem;
+    color:var(--muted);
+    display:flex;
+    align-items:center;
+    gap:5px}
+    
+.modal-actions{
+    display:flex;
+    gap:10px;
+    margin-top:14px;
+    flex-wrap:wrap}
+    
+.btn-modal-yt{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#FF0000;
+    color:#fff;
+    padding:10px 20px;
+    border-radius:10px;
+    font-family:'Poppins',sans-serif;
+    font-size:.82rem;
+    font-weight:700;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    transition:background .2s,transform .2s;
+}
+
+.btn-modal-yt:hover{
+    background:#CC0000;
+    transform:translateY(-2px)}
+    
+.btn-modal-copy{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--gold-pale);
+    color:var(--gold);
+    border:1px solid var(--gold-border);
+    padding:10px 18px;
+    border-radius:10px;
+    font-family:'Poppins',sans-serif;
+    font-size:.82rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:all .2s;
+}
+.btn-modal-copy:hover{background:var(--gold-glow)}
+
+/* ══════════════════════════════════════════════
+CTA YOUTUBE — IDENTIK
+══════════════════════════════════════════════ */
+.cta-section{
+    margin:40px 0 32px;
+    background:var(--bg-card);
+    border:1px solid var(--yt-border);
+    border-radius:22px;
+    padding:40px 32px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    animation:fadeUp .4s .4s ease both;
+}
+
+.cta-section::before{
+    content:’’;
+    position:absolute;
+    inset:0;
+    background:radial-gradient(ellipse 70% 55% at 50% 100%,rgba(255,0,0,.04) 0%,transparent 65%);
+    pointer-events:none;
+}
+
+.cta-section::after{
+    content:’’;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:2px;
+    background:linear-gradient(90deg,transparent,var(--yt-red),transparent);
+}
+
+.cta-emoji{
+    font-size:2.4rem;
+    display:block;
+    margin-bottom:14px}
+    
+.cta-section h2{
+    font-family:'Nunito',sans-serif;
+    font-size:1.7rem;
+    color:#fff;
+    margin-bottom:10px;
+    text-align:center}
+
+.cta-section p{
+    font-size:.87rem;
+    color:var(--muted);
+    max-width:420px;
+    margin:0 auto 28px;
+    line-height:1.7}
+
+.btn-yt-wrap{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap}
+    
+.btn-yt{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:#FF0000;
+    color:#fff;
+    padding:14px 30px;
+    border-radius:13px;
+    font-family:'Poppins',sans-serif;
+    font-size:.93rem;
+    font-weight:700;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    box-shadow:0 6px 24px rgba(255,0,0,.28);
+    transition:background .2s,transform .2s,box-shadow .2s;
+}
+
+.btn-yt:hover{
+    background:#CC0000;
+    transform:translateY(-3px);
+    box-shadow:0 10px 32px rgba(255,0,0,.38)}
+    
+.btn-yt i{font-size:1.1rem}
+.btn-playlist{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:transparent;
+    color:var(--yt-muted);
+    padding:14px 24px;
+    border-radius:13px;
+    font-family:'Poppins',sans-serif;
+    font-size:.9rem;
+    font-weight:600;
+    text-decoration:none;
+    border:1px solid var(--yt-border);
+    transition:all .2s;
+}
+
+.btn-playlist:hover{
+    background:var(--yt-bg);
+    color:#ff6b6b;
+    transform:translateY(-2px)}
+    
+.cta-note{
+    margin-top:16px;
+    font-size:.74rem;
+    color:var(--faint);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:5px}
+
+/* ══════════════════════════════════════════════
+FOOTER — IDENTIK
+══════════════════════════════════════════════ */
+.page-footer{
+    background:rgba(11,28,20,0.97);
+    border-top:1px solid var(--border-s);
+    padding:30px 0 20px;
+    margin-top:20px;
+    text-align:center;
+}
+.footer-logo{
+    font-family:'Poppins',sans-serif;
+    font-size:1.1rem;
+    font-weight:800;
+    color:var(--gold);
+    margin-bottom:4px}
+    
+.footer-tagline{
+    font-family:'Nunito',sans-serif;
+    font-size:.7rem;
+    color:var(--muted);
+    margin-bottom:12px}
+    
+.footer-socials{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:15px}
+
+.social-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:6px 12px;
+    border-radius:12px;
+    font-family:'Nunito',sans-serif;
+    font-size:.7rem;
+    font-weight:700;
+    text-decoration:none;
+    border:1px solid;
+    transition:transform .25s,box-shadow .25s,background .2s;
+}
+.social-btn.ig{
+    background:rgba(225,48,108,0.08);
+    color:#F472B6;
+    border-color:rgba(225,48,108,0.22)}
+    
+.social-btn.ig:hover{
+    background:rgba(225,48,108,0.15);
+    transform:translateY(-3px);
+    box-shadow:0 6px 20px rgba(225,48,108,0.2)}
+    
+.social-btn.wa{
+    background:rgba(37,211,102,0.08);
+    color:#4ADE80;
+    border-color:rgba(37,211,102,0.22)}
+    
+.social-btn.wa:hover{
+    background:rgba(37,211,102,0.15);
+    transform:translateY(-3px);
+    box-shadow:0 6px 20px rgba(37,211,102,0.2)}
+    
+.social-btn.yt{
+    background:rgba(255,0,0,0.08);
+    color:#F87171;
+    border-color:rgba(255,0,0,0.22)}
+    
+.social-btn.yt:hover{
+    background:rgba(255,0,0,0.14);
+    transform:translateY(-3px);
+    box-shadow:0 6px 20px rgba(255,0,0,0.2)}
+    
+.footer-divider{
+    width:40px;
+    height:1px;
+    background:var(--border);
+    margin:0 auto 12px}
+    
+.footer-copy{
+    font-family:'Nunito',sans-serif;
+    font-size:.76rem;
+    color:var(--muted)}
+
+/* ── BACK TO TOP ── */
+.btt{
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    width:43px;
+    height:43px;
+    background:var(--gold);
+    color:#0D1F18;
+    border:none;
+    border-radius:50%;
+    font-size:.95rem;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 20px rgba(0,0,0,.4);
+    z-index:99;
+    opacity:0;
+    transform:translateY(12px) scale(.8);
+    pointer-events:none;
+    transition:opacity .3s,transform .3s,background .2s;
+}
+
+.btt.visible{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    pointer-events:auto}
+    
+.btt:hover{
+    background:var(--gold-l);
+    transform:translateY(-3px) scale(1.08)}
+
+/* ══════════════════════════════════════════════
+ANIMATIONS
+══════════════════════════════════════════════ */
+@keyframes fadeUp  {from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes popIn   {from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
+@keyframes shimmer {to{background-position:-200% 0}}
+@keyframes spin    {to{transform:translate(-50%,-50%) rotate(360deg)}}
+
+/* ══════════════════════════════════════════════
+RESPONSIVE
+══════════════════════════════════════════════ */
+@media(max-width:600px){
+.hero h1{font-size:1.9rem}
+.cta-section{padding:28px 18px}
+.topbar-badge{display:none}
+.vid-thumb{width:110px;min-width:110px}
+.vid-info{padding:12px 10px 12px 12px}
+.vid-actions{padding:0 10px 0 4px}
+.filter-tabs{display:none}
+.btn-yt-wrap{flex-direction:column;align-items:center}
+.modal-info{padding:14px 16px 16px}
+.modal-title{font-size:.88rem}
+}
+@media(max-width:400px){
+.vid-thumb{width:90px;min-width:90px}
+.btn-copy{display:none}
+}
+</style>
+
+</head>
+<body>
+
+<!-- ══ TOPBAR ══════════════════════════════════════ -->
+
+<nav class="topbar">
+    <div class="container topbar-inner">
+        <a href="index.html" class="btn-back-nav">
+            <i class="fa-solid fa-arrow-left"></i> Kembali
+        </a>
+        <a href="index.html" class="topbar-logo">Hi-Ma'had</a>
+        <span class="topbar-badge">Rekaman</span>
+    </div>
+</nav>
+
+<!-- ══ HERO ════════════════════════════════════════ -->
+
+<header class="hero">
+    <div class="container hero-inner">
+        <div class="hero-icon-wrap">🎥</div>
+        <p class="hero-eyebrow">Akademik</p>
+        <h1>Rekaman <span>Mudzakarah</span></h1>
+        <p class="lead">Arsip lengkap rekaman mudzakarah dan kajian ilmiah Ma'had. Tonton ulang kapanpun kamu butuhkan.</p>
+        <div class="hero-pills">
+            <span class="pill pill-yt"><i class="fa-brands fa-youtube"></i> YouTube</span>
+            <span class="pill pill-gold"><i class="fa-solid fa-rotate"></i> Diperbarui tiap sesi</span>
+            <span class="pill pill-count" id="totalCount"><i class="fa-solid fa-video"></i> Memuat...</span>
+        </div>
+    </div>
+</header>
+
+<!-- ══ MODAL PLAYER ════════════════════════════════ -->
+
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Pemutar video">
+    <div class="modal-box" id="modalBox">
+        <div class="modal-video loading" id="modalVideo">
+            <!-- iframe diisi via JS -->
+        </div>
+        <div class="modal-info">
+            <div class="modal-info-top">
+                <div class="modal-title" id="modalTitle">–</div>
+                <button class="modal-close" id="modalClose" aria-label="Tutup">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-meta">
+                <span class="modal-meta-item" id="modalCat"><i class="fa-solid fa-tag" style="font-size:10px"></i> –</span>
+                <span class="modal-meta-item" id="modalDate"><i class="fa-regular fa-calendar" style="font-size:10px"></i> –</span>
+                <span class="modal-meta-item" id="modalDur"><i class="fa-regular fa-clock" style="font-size:10px"></i> –</span>
+            </div>
+            <div class="modal-actions">
+                <a href="#" class="btn-modal-yt" id="modalYtLink" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-youtube"></i> Buka di YouTube
+                </a>
+                <button class="btn-modal-copy" id="modalCopyBtn">
+                    <i class="fa-solid fa-link"></i> Salin Link
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ══ MAIN CONTENT ════════════════════════════════ -->
+
+<main style="padding-bottom:80px">
+<div class="container">
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+    <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Cari judul mudzakarah atau topik...">
+    </div>
+    <div class="sort-wrap">
+        <select class="sort-select" id="sortSelect" aria-label="Urutkan">
+            <option value="default">Urutan Asli</option>
+            <option value="newest">Terbaru</option>
+            <option value="oldest">Terlama</option>
+            <option value="az">A–Z</option>
+        </select>
+    </div>
+    <div class="filter-tabs" id="filterTabs">
+        <button class="filter-btn active" data-filter="all">Semua</button>
+        <button class="filter-btn" data-filter="fiqh">Fiqh</button>
+        <button class="filter-btn" data-filter="Balaghoh">Balaghoh</button>
+        <button class="filter-btn" data-filter="Mawarits">Mawarits</button>
+        <button class="filter-btn" data-filter="Tauhid">Tauhid</button>
+        <button class="filter-btn" data-filter="Hadits">Hadits</button>
+        <button class="filter-btn" data-filter="Ulumul Quran">Ulumul Quran</button>
+    </div>
+</div>
+
+<!-- ─── TERBARU ──────────────────────────────── -->
+<div class="playlist-wrap" data-category-wrap>
+    <div class="section-label">
+        <div class="section-title-wrap">
+            <h2>🔴 Terbaru</h2>
+            <span class="section-count" id="count-terbaru"></span>
+        </div>
+        <div class="section-line"></div>
+    </div>
+    <div class="playlist" id="playlist-terbaru">
+
+        <div class="vid-item"
+             data-category="Tauhid"
+             data-title="05. Al-Ustadzah Raisa Kamila | Tauhid | 3 Tsanawy"
+             data-yt="https://youtu.be/k1loNjReJos"
+             data-ytid="k1loNjReJos"
+             data-date="2026-04-10"
+             data-dur="1:12:43"
+             data-label="Sesi Terbaru">
+            <div class="vid-thumb">
+                <img src="https://img.youtube.com/vi/k1loNjReJos/mqdefault.jpg" alt="Thumbnail Tauhid 05" loading="lazy">
+                <div class="play-overlay"><div class="play-btn"><i class="fa-solid fa-play"></i></div></div>
+                <span class="vid-dur">1:12:43</span>
+            </div>
+            <div class="vid-info">
+                <div class="vid-num">Sesi Terbaru</div>
+                <div class="vid-title">05. Al-Ustadzah Raisa Kamila | Tauhid | 3 Tsanawy</div>
+                <div class="vid-meta">
+                    <span class="vid-meta-item"><i class="fa-solid fa-tag" style="font-size:10px"></i> Tauhid</span>
+                    <span class="vid-meta-item"><i class="fa-regular fa-calendar" style="font-size:10px"></i> 10 Apr 2026</span>
+                    <span class="vid-tag tag-new">Baru</span>
+                </div>
+            </div>
+            <div class="vid-actions">
+                <button class="btn-copy" data-link="https://youtu.be/k1loNjReJos" aria-label="Salin link">
+                    <i class="fa-solid fa-link"></i>
+                    <span class="copy-tooltip">Tersalin!</span>
+                </button>
+                <i class="fa-solid fa-chevron-right vid-arrow"></i>
+            </div>
+        </div>
+
+        <div class="vid-item"
+             data-category="Tauhid"
+             data-title="04. Al-Ustadzah Raisa Kamila | Tauhid | 3 Tsanawy"
+             data-yt="https://youtu.be/uYB1P6Xmvno"
+             data-ytid="uYB1P6Xmvno"
+             data-date="2026-04-07"
+             data-dur="58:21"
+             data-label="Sesi Terbaru">
+            <div class="vid-thumb">
+                <img src="https://img.youtube.com/vi/uYB1P6Xmvno/mqdefault.jpg" alt="Thumbnail Tauhid 04" loading="lazy">
+                <div class="play-overlay"><div class="play-btn"><i class="fa-solid fa-play"></i></div></div>
+                <span class="vid-dur">58:21</span>
+            </div>
+            <div class="vid-info">
+                <div class="vid-num">Sesi Terbaru</div>
+                <div class="vid-title">04. Al-Ustadzah Raisa Kamila | Tauhid | 3 Tsanawy</div>
+                <div class="vid-meta">
+                    <span class="vid-meta-item"><i class="fa-solid fa-tag" style="font-size:10px"></i> Tauhid</span>
+                    <span class="vid-meta-item"><i class="fa-regular fa-calendar" style="font-size:10px"></i> 7 Apr 2026</span>
+                    <span class="vid-tag tag-new">Baru</span>
+                </div>
+            </div>
+            <div class="vid-actions">
+                <button class="btn-copy" data-link="https://youtu.be/uYB1P6Xmvno" aria-label="Salin link">
+                    <i class="fa-solid fa-link"></i>
+                    <span class="copy-tooltip">Tersalin!</span>
+                </button>
+                <i class="fa-solid fa-chevron-right vid-arrow"></i>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ─── FIQIH ──────────────────────────────── -->
+<div class="playlist-wrap" data-category-wrap>
+    <div class="section-label">
+        <div class="section-title-wrap">
+            <h2>👳🏼‍♂️ Fiqih Syafi'i</h2>
+            <span class="section-count" id="count-fiqh"></span>
+        </div>
+        <div class="section-line"></div>
+    </div>
+    <div class="playlist" id="playlist-fiqh">
+
+        <div class="vid-item"
+             data-category="fiqh"
+             data-title="Playlist Fiqih Syafi'i | 3 Tsanawy | Al-Ustadz Hammad Zaidan"
+             data-yt="https://youtu.be/2UYBoZeRYCg"
+             data-ytid="2UYBoZeRYCg"
+             data-date="2026-04-01"
+             data-dur="1:10:05"
+             data-label="Fiqh • #Part 01–12">
+            <div class="vid-thumb">
+                <img src="https://img.youtube.com/vi/2UYBoZeRYCg/mqdefault.jpg" alt="Thumbnail Fiqh" loading="lazy">
+                <div class="play-overlay"><div class="play-btn"><i class="fa-solid fa-play"></i></div></div>
+                <span class="vid-dur">1:10:05</span>
+            </div>
+            <div class="vid-info">
+                <div class="vid-num">Fiqh • #Part 01–12</div>
+                <div class="vid-title">Playlist Fiqih Syafi'i | 3 Tsanawy | Al-Ustadz Hammad Zaidan</div>
+                <div class="vid-meta">
+                    <span class="vid-meta-item"><i class="fa-regular fa-calendar" style="font-size:10px"></i> 1 Apr 2026</span>
+                </div>
+            </div>
+            <div class="vid-actions">
+                <button class="btn-copy" data-link="https://youtu.be/2UYBoZeRYCg" aria-label="Salin link">
+                    <i class="fa-solid fa-link"></i>
+                    <span class="copy-tooltip">Tersalin!</span>
+                </button>
+                <i class="fa-solid fa-chevron-right vid-arrow"></i>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ─── BALAGHOH ────────────────────────────── -->
+<div class="playlist-wrap" data-category-wrap>
+    <div class="section-label">
+        <div class="section-title-wrap">
+            <h2>✍️ Balaghoh</h2>
+            <span class="section-count" id="count-Balaghoh"></span>
+        </div>
+        <div class="section-line"></div>
+    </div>
+    <div class="playlist" id="playlist-Balaghoh">
+
+        <div class="vid-item"
+             data-category="Balaghoh"
+             data-title="Playlist Balaghoh | 3 Tsanawy | Al-Ustadz Faruq Musthofa"
+             data-yt="https://youtu.be/XnhmHk4LWEI"
+             data-ytid="XnhmHk4LWEI"
+             data-date="2026-02-14"
+             data-dur="53:42"
+             data-label="Balaghoh • #Part 01–07">
+            <div class="vid-thumb">
+                <img src="https://img.youtube.com/vi/XnhmHk4LWEI/mqdefault.jpg" alt="Thumbnail Balaghoh" loading="lazy">
+                <div class="play-overlay"><div class="play-btn"><i class="fa-solid fa-play"></i></div></div>
+                <span class="vid-dur">53:42</span>
+            </div>
+            <div class="vid-info">
+                <div class="vid-num">Balaghoh • #Part 01–07</div>
+                <div class="vid-title">Playlist Balaghoh | 3 Tsanawy | Al-Ustadz Faruq Musthofa</div>
+                <div class="vid-meta">
+                    <span class="vid-meta-item"><i class="fa-regular fa-calendar" style="font-size:10px"></i> 14 Feb 2026</span>
+                </div>
+            </div>
+            <div class="vid-actions">
+                <button class="btn-copy" data-link="https://youtu.be/XnhmHk4LWEI" aria-label="Salin link">
+                    <i class="fa-solid fa-link"></i>
+                    <span class="copy-tooltip">Tersalin!</span>
+                </button>
+                <i class="fa-solid fa-chevron-right vid-arrow"></i>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ─── MAWARITS ────────────────────────────── -->
+<div class="playlist-wrap" data-category-wrap>
+    <div class="section-label">
+        <div class="section-title-wrap">
+            <h2>💰 Mawarits</h2>
+            <span class="section-count" id="count-Mawarits"></span>
+        </div>
+        <div class="section-line"></div>
+    </div>
+    <div class="playlist" id="playlist-Mawarits">
+
+        <div class="vid-item"
+             data-category="Mawarits"
+             data-title="Playlist Mawarits | 3 Tsanawy | Al-Ustadz Faishal Faruq"
+             data-yt="https://youtu.be/MPw5aKeSYY0"
+             data-ytid="MPw5aKeSYY0"
+             data-date="2026-02-07"
+             data-dur="1:23:33"
+             data-label="Mawarits • #Part 01–04">
+            <div class="vid-thumb">
+                <img src="https://img.youtube.com/vi/MPw5aKeSYY0/mqdefault.jpg" alt="Thumbnail Mawarits" loading="lazy">
+                <div class="play-overlay"><div class="play-btn"><i class="fa-solid fa-play"></i></div></div>
+                <span class="vid-dur">1:23:33</span>
+            </div>
+            <div class="vid-info">
+                <div class="vid-num">Mawarits • #Part 01–04</div>
+                <div class="vid-title">Playlist Mawarits | 3 Tsanawy | Al-Ustadz Faishal Faruq</div>
+                <div class="vid-meta">
+                    <span class="vid-meta-item"><i class="fa-regular fa-calendar" style="font-size:10px"></i> 7 Feb 2026</span>
+                </div>
+            </div>
+            <div class="vid-actions">
+                <button class="btn-copy" data-link="https://youtu.be/MPw5aKeSYY0" aria-label="Salin link">
+                    <i class="fa-solid fa-link"></i>
+                    <span class="copy-tooltip">Tersalin!</span>
+                </button>
+                <i class="fa-solid fa-chevron-right vid-arrow"></i>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ─── TAUHID ──────────────────────────────── -->
+<div class="playlist-wrap" data-category-wrap>
+    <div class="section-label">
+        <div class="section-title-wrap">
+            <h2>🌙 Tauhid</h2>
+            <span class="section-count" id="count-Tauhid"></span>
+        </div>
+        <div class="section-line"></div>
+    </div>
+    <div class="playlist" id="playlist-Tauhid">
+
+        <div class="vid-item"
+             data-category="Tauhid"
+             data-title="Playlist Tauhid | 3 Tsanawy | Al-Ustadzah Raisa Kamila"
+             data-yt="https://youtu.be/fT8xTMSIKX8"
+             data-ytid="fT8xTMSIKX8"
+             data-date="2026-04-14"
+             data-dur="1:41:44"
+             data-label="Tauhid • #Part 01–06">
+            <div class="vid-thumb">
+                <img src="https://img.youtube.com/vi/fT8xTMSIKX8/mqdefault.jpg" alt="Thumbnail Tauhid" loading="lazy">
+                <div class="play-overlay"><div class="play-btn"><i class="fa-solid fa-play"></i></div></div>
+                <span class="vid-dur">1:41:44</span>
+            </div>
+            <div class="vid-info">
+                <div class="vid-num">Tauhid • #Part 01–06</div>
+                <div class="vid-title">Playlist Tauhid | 3 Tsanawy | Al-Ustadzah Raisa Kamila</div>
+                <div class="vid-meta">
+                    <span class="vid-meta-item"><i class="fa-regular fa-calendar" style="font-size:10px"></i> 14 Apr 2026</span>
+                </div>
+            </div>
+            <div class="vid-actions">
+                <button class="btn-copy" data-link="https://youtu.be/fT8xTMSIKX8" aria-label="Salin link">
+                    <i class="fa-solid fa-link"></i>
+                    <span class="copy-tooltip">Tersalin!</span>
+                </button>
+                <i class="fa-solid fa-chevron-right vid-arrow"></i>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ─── ULUMUL HADITS ───────────────────────── -->
+<div class="playlist-wrap" data-category-wrap>
+    <div class="section-label">
+        <div class="section-title-wrap">
+            <h2>📖 Ulumul Hadits</h2>
+            <span class="section-count" id="count-Hadits"></span>
+        </div>
+        <div class="section-line"></div>
+    </div>
+    <div class="playlist" id="playlist-Hadits">
+
+        <div class="vid-item"
+             data-category="Hadits"
+             data-title="Playlist Ulumul Hadits | 3 Tsanawy | Al-Ustadz Muhammad Mizani"
+             data-yt="https://youtu.be/1Vt0corO5_c"
+             data-ytid="1Vt0corO5_c"
+             data-date="2026-03-17"
+             data-dur="1:59:56"
+             data-label="Ulumul Hadits • #Part 01–04">
+            <div class="vid-thumb">
+                <img src="https://img.youtube.com/vi/1Vt0corO5_c/mqdefault.jpg" alt="Thumbnail Ulumul Hadits" loading="lazy">
+                <div class="play-overlay"><div class="play-btn"><i class="fa-solid fa-play"></i></div></div>
+                <span class="vid-dur">1:59:56</span>
+            </div>
+            <div class="vid-info">
+                <div class="vid-num">Ulumul Hadits • #Part 01–04</div>
+                <div class="vid-title">Playlist Ulumul Hadits | 3 Tsanawy | Al-Ustadz Muhammad Mizani</div>
+                <div class="vid-meta">
+                    <span class="vid-meta-item"><i class="fa-regular fa-calendar" style="font-size:10px"></i> 17 Mar 2026</span>
+                </div>
+            </div>
+            <div class="vid-actions">
+                <button class="btn-copy" data-link="https://youtu.be/1Vt0corO5_c" aria-label="Salin link">
+                    <i class="fa-solid fa-link"></i>
+                    <span class="copy-tooltip">Tersalin!</span>
+                </button>
+                <i class="fa-solid fa-chevron-right vid-arrow"></i>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ─── ULUMUL QURAN ─────────────────────────── -->
+<div class="playlist-wrap" data-category-wrap>
+    <div class="section-label">
+        <div class="section-title-wrap">
+            <h2>📗 Ulumul Quran</h2>
+            <span class="section-count" id="count-Ulumul Quran"></span>
+        </div>
+        <div class="section-line"></div>
+    </div>
+    <div class="playlist" id="playlist-UlumulQuran">
+
+        <div class="vid-item"
+             data-category="Ulumul Quran"
+             data-title="Playlist Ulumul Quran | 3 Tsanawy | Al-Ustadzah Unaysa Lukmanul Hakim"
+             data-yt="https://youtu.be/F1559JTDbdo"
+             data-ytid="F1559JTDbdo"
+             data-date="2026-03-17"
+             data-dur="59:48"
+             data-label="Ulumul Quran • #Part 01">
+            <div class="vid-thumb">
+                <img src="https://img.youtube.com/vi/F1559JTDbdo/mqdefault.jpg" alt="Thumbnail Ulumul Quran" loading="lazy">
+                <div class="play-overlay"><div class="play-btn"><i class="fa-solid fa-play"></i></div></div>
+                <span class="vid-dur">59:48</span>
+            </div>
+            <div class="vid-info">
+                <div class="vid-num">Ulumul Quran • #Part 01</div>
+                <div class="vid-title">Playlist Ulumul Quran | 3 Tsanawy | Al-Ustadzah Unaysa Lukmanul Hakim</div>
+                <div class="vid-meta">
+                    <span class="vid-meta-item"><i class="fa-regular fa-calendar" style="font-size:10px"></i> 17 Mar 2026</span>
+                </div>
+            </div>
+            <div class="vid-actions">
+                <button class="btn-copy" data-link="https://youtu.be/F1559JTDbdo" aria-label="Salin link">
+                    <i class="fa-solid fa-link"></i>
+                    <span class="copy-tooltip">Tersalin!</span>
+                </button>
+                <i class="fa-solid fa-chevron-right vid-arrow"></i>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- EMPTY STATE -->
+<div class="no-result" id="noResult">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    Tidak ada rekaman yang cocok dengan pencarianmu.
+</div>
+
+<!-- ─── CTA YOUTUBE ────────────────────────── -->
+<div class="cta-section">
+    <span class="cta-emoji">▶️</span>
+    <h2>Tonton Semua di YouTube</h2>
+    <p>Seluruh rekaman mudzakarah tersimpan di channel YouTube resmi HPIM Mesir. Subscribe agar tidak ketinggalan sesi terbaru.</p>
+    <div class="btn-yt-wrap">
+        <a href="https://youtube.com/@HPIMMESIROFFICIAL"
+           class="btn-yt" target="_blank" rel="noopener">
+            <i class="fa-brands fa-youtube"></i> Buka Channel YouTube
+        </a>
+        <a href="https://www.youtube.com/@HPIMMESIROFFICIAL/playlists"
+           class="btn-playlist" target="_blank" rel="noopener">
+            <i class="fa-solid fa-list"></i> Lihat Playlist Mudzakarah
+        </a>
+    </div>
+    <p class="cta-note">
+        <i class="fa-solid fa-bell" style="font-size:10px"></i>
+        Aktifkan notifikasi agar tidak ketinggalan rekaman terbaru
+    </p>
+</div>
+
+</div>
+</main>
+
+<!-- ══ FOOTER ══════════════════════════════════════ -->
+
+<footer class="page-footer">
+    <div class="container">
+        <div class="footer-logo">Hi-Ma'had</div>
+        <p class="footer-tagline">Pusat Informasi Mahadian's &nbsp;•&nbsp; HPIM Mesir</p>
+        <div class="footer-socials">
+            <a href="https://instagram.com/hpimmesir" class="social-btn ig" target="_blank" rel="noopener">
+                <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+            <a href="https://wa.me/6285156579101" class="social-btn wa" target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://youtube.com/@HPIMMESIROFFICIAL" class="social-btn yt" target="_blank" rel="noopener">
+                <i class="fa-brands fa-youtube"></i> YouTube
+            </a>
+        </div>
+        <div class="footer-divider"></div>
+        <p class="footer-copy">© 2026 HPIM Mesir &nbsp;•&nbsp; Semua hak dilindungi</p>
+    </div>
+</footer>
+
+<button class="btt" id="btt" aria-label="Kembali ke atas">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script>
+/* ════════════════════════════════════════════════
+   HITUNG REKAMAN
+════════════════════════════════════════════════ */
+const catIds = ['fiqh','Balaghoh','Mawarits','Tauhid','Hadits','Ulumul Quran'];
+let total = 0;
+
+const terbaru = document.querySelectorAll('#playlist-terbaru .vid-item');
+const cntT    = document.getElementById('count-terbaru');
+if (cntT) cntT.textContent = terbaru.length + ' rekaman';
+
+catIds.forEach(c => {
+    // selector-safe: ganti spasi dengan ID yang valid
+    const safeId = c.replace(' ', '');
+    const items  = document.querySelectorAll(`[id="playlist-${safeId}"] .vid-item, #playlist-${c.replace(' ','')} .vid-item, #playlist-${c} .vid-item`);
+    const cnt    = document.getElementById(`count-${c}`);
+    if (cnt) cnt.textContent = items.length + ' playlist';
+    total += items.length;
+});
+
+const totalEl = document.getElementById('totalCount');
+if (totalEl) totalEl.innerHTML = `<i class="fa-solid fa-video"></i> ${total + terbaru.length} playlist`;
+
+/* ════════════════════════════════════════════════
+   MODAL PLAYER
+════════════════════════════════════════════════ */
+const modalOverlay = document.getElementById('modalOverlay');
+const modalVideo   = document.getElementById('modalVideo');
+const modalTitle   = document.getElementById('modalTitle');
+const modalClose   = document.getElementById('modalClose');
+const modalYtLink  = document.getElementById('modalYtLink');
+const modalCopyBtn = document.getElementById('modalCopyBtn');
+const modalCat     = document.getElementById('modalCat');
+const modalDate    = document.getElementById('modalDate');
+const modalDur     = document.getElementById('modalDur');
+
+function openModal(item) {
+    const ytid  = item.getAttribute('data-ytid');
+    const yturl = item.getAttribute('data-yt');
+    const title = item.getAttribute('data-title');
+    const cat   = item.getAttribute('data-category');
+    const date  = item.querySelector('.vid-meta-item:last-of-type')?.textContent?.trim() || '–';
+    const dur   = item.getAttribute('data-dur');
+
+    // Set info
+    modalTitle.textContent = title;
+    modalCat.innerHTML  = `<i class="fa-solid fa-tag" style="font-size:10px"></i> ${cat}`;
+    modalDate.innerHTML = `<i class="fa-regular fa-calendar" style="font-size:10px"></i> ${item.querySelector('.vid-meta-item:nth-child(2)')?.textContent?.trim() || '–'}`;
+    modalDur.innerHTML  = `<i class="fa-regular fa-clock" style="font-size:10px"></i> ${dur}`;
+    modalYtLink.href = yturl;
+
+    // Inject iframe
+    modalVideo.classList.add('loading');
+    modalVideo.innerHTML = `<iframe
+        src="https://www.youtube.com/embed/${ytid}?autoplay=1&rel=0&modestbranding=1"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen
+        title="${title}"
+        onload="this.closest('.modal-video').classList.remove('loading')"
+    ></iframe>`;
+
+    // Copy button
+    modalCopyBtn.onclick = () => {
+        navigator.clipboard?.writeText(yturl).then(() => {
+            modalCopyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Tersalin!';
+            setTimeout(() => {
+                modalCopyBtn.innerHTML = '<i class="fa-solid fa-link"></i> Salin Link';
+            }, 2000);
+        });
+    };
+
+    modalOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    modalOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+    // Hentikan video dengan hapus iframe
+    setTimeout(() => { modalVideo.innerHTML = ''; }, 300);
+}
+
+modalClose.addEventListener('click', closeModal);
+modalOverlay.addEventListener('click', e => {
+    if (e.target === modalOverlay) closeModal();
+});
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
+});
+
+/* ════════════════════════════════════════════════
+   KLIK CARD → BUKA MODAL
+════════════════════════════════════════════════ */
+function attachCardClicks() {
+    document.querySelectorAll('.vid-item').forEach(item => {
+        // Hapus listener lama dulu (clone trick)
+        const clone = item.cloneNode(true);
+        item.parentNode.replaceChild(clone, item);
+        clone.addEventListener('click', function(e) {
+            // Jangan buka modal kalau klik tombol copy
+            if (e.target.closest('.btn-copy')) return;
+            openModal(this);
+        });
+    });
+
+    // Re-attach copy buttons
+    document.querySelectorAll('.btn-copy').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const link = this.getAttribute('data-link');
+            navigator.clipboard?.writeText(link).then(() => {
+                this.classList.add('copied');
+                setTimeout(() => this.classList.remove('copied'), 2000);
+            });
+        });
+    });
+}
+
+attachCardClicks();
+
+/* ════════════════════════════════════════════════
+   FILTER KATEGORI
+════════════════════════════════════════════════ */
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        const filter = this.getAttribute('data-filter');
+        document.getElementById('searchInput').value = '';
+        document.getElementById('noResult').style.display = 'none';
+
+        document.querySelectorAll('.playlist-wrap').forEach(wrap => {
+            const items = wrap.querySelectorAll('.vid-item');
+            let any = false;
+            items.forEach(v => {
+                const show = filter === 'all' || v.getAttribute('data-category') === filter;
+                v.style.display = show ? 'flex' : 'none';
+                if (show) any = true;
+            });
+            wrap.style.display = any ? 'block' : 'none';
+        });
+    });
+});
+
+/* ════════════════════════════════════════════════
+   PENCARIAN
+════════════════════════════════════════════════ */
+document.getElementById('searchInput').addEventListener('input', function() {
+    const q = this.value.trim().toLowerCase();
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('[data-filter="all"]').classList.add('active');
+
+    let anyVis = false;
+    document.querySelectorAll('.playlist-wrap').forEach(wrap => {
+        const items = wrap.querySelectorAll('.vid-item');
+        let secVis = false;
+        items.forEach(v => {
+            const title = v.getAttribute('data-title').toLowerCase();
+            const cat   = v.getAttribute('data-category').toLowerCase();
+            const show  = !q || title.includes(q) || cat.includes(q);
+            v.style.display = show ? 'flex' : 'none';
+            if (show) secVis = true;
+        });
+        wrap.style.display = secVis ? 'block' : 'none';
+        if (secVis) anyVis = true;
+    });
+
+    document.getElementById('noResult').style.display = anyVis ? 'none' : 'block';
+});
+
+/* ════════════════════════════════════════════════
+   SORT
+════════════════════════════════════════════════ */
+document.getElementById('sortSelect').addEventListener('change', function() {
+    const val = this.value;
+
+    document.querySelectorAll('.playlist').forEach(playlist => {
+        const items = Array.from(playlist.querySelectorAll('.vid-item'));
+        if (items.length < 2) return;
+
+        const sorted = [...items].sort((a, b) => {
+            if (val === 'newest') {
+                return new Date(b.getAttribute('data-date')) - new Date(a.getAttribute('data-date'));
+            }
+            if (val === 'oldest') {
+                return new Date(a.getAttribute('data-date')) - new Date(b.getAttribute('data-date'));
+            }
+            if (val === 'az') {
+                return a.getAttribute('data-title').localeCompare(b.getAttribute('data-title'), 'id');
+            }
+            return 0; // default: urutan DOM asli
+        });
+
+        sorted.forEach(item => playlist.appendChild(item));
+    });
+
+    // Re-attach event setelah reorder DOM
+    attachCardClicks();
+});
+
+/* ════════════════════════════════════════════════
+   BACK TO TOP
+════════════════════════════════════════════════ */
+const btt = document.getElementById('btt');
+window.addEventListener('scroll', () => {
+    btt.classList.toggle('visible', window.scrollY > 300);
+}, { passive: true });
+btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+
+</body>
+</html>
