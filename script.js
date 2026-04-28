@@ -161,7 +161,13 @@ document.addEventListener('DOMContentLoaded', () => {
         { icon: '🪪', title: 'Pembuatan Kerneh',             category: 'Administrasi · Banin', target: 'sub-admin', href: 'kerneh.html' },
         { icon: '📅', title: 'Surat Agazah',                 category: 'Administrasi · Banin', target: 'sub-admin', href: 'agazah.html' },
         { icon: '✅', title: 'Legalisir Tadarruj',           category: 'Administrasi · Banin', target: 'sub-admin', href: 'legalisir.html' },
-        { icon: '💻', title: 'Tadarruj Elektronik',          category: 'Administrasi · Banin', target: 'sub-admin', href: 'telektronik.html' },
+        { icon: '💻', title: 'Tadarruj Elektronik',          category: 'Administrasi · Banin', target: 'sub-admin', href: 'elektronik.html' },
+        // Administrasi Banat
+        { icon: '📖', title: 'Pengurusan Tadarruj Dirosi', category: 'Administrasi · Banat', target: 'sub-admin', href: 'tadarrujbt.html' },
+        { icon: '🪪', title: 'Pembuatan Kerneh',             category: 'Administrasi · Banat', target: 'sub-admin', href: 'kernehbt.html' },
+        { icon: '📅', title: 'Surat Agazah',                 category: 'Administrasi · Banat', target: 'sub-admin', href: 'agazahbt.html' },
+        { icon: '✅', title: 'Legalisir Tadarruj',           category: 'Administrasi · Banat', target: 'sub-admin', href: 'legalisirbt.html' },
+        { icon: '💻', title: 'Tadarruj Elektronik',          category: 'Administrasi · Banat', target: 'sub-admin', href: 'elektronikbt.html' },
         // Akademik
         { icon: '📚', title: 'Muqorror Mahad',               category: 'Informasi Akademik',   target: 'sub-akademik', href: 'muqorror.html' },
         { icon: '🗓️', title: 'Kalender Akademik',            category: 'Informasi Akademik',   target: 'sub-akademik', href: 'jadwal.html' },
