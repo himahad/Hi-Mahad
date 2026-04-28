@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { icon: '🎥', title: 'Rekaman Mudzakarah',           category: 'Informasi Akademik',   target: 'sub-akademik', href: 'rekaman.html' },
         // Umum
         { icon: '📢', title: 'Pengumuman',                   category: 'Info',                  target: 'pengumuman-link', href: null },
-        { icon: '📞', title: 'Hubungi Kami',                  category: 'Kontak',                target: 'kontak-link',    href: null },
+        { icon: '📞', title: 'Yuk, Terhubung',                  category: 'Kontak',                target: 'kontak-link',    href: null },
     ];
 
     const searchInput   = document.getElementById('searchInput');
