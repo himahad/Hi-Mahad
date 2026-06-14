@@ -1004,28 +1004,6 @@ h1, h2, h3, h4, h5 {
     50%       { opacity: 0.35; }
 }
 
-/* --- LOGIC VIDEO --- */
-// Gunakan tanda kutip lurus standar seperti di bawah ini
-const v = document.getElementById('shoeVideo');
-const b = document.getElementById('videoControl');
-
-if (v && b) {
-  b.addEventListener('click', () => {
-    if (v.paused) {
-      v.play();
-      // Pastikan elemen .btn-text ada di HTML kamu
-      const txt = b.querySelector('.btn-text');
-      if(txt) txt.textContent = 'PAUSE';
-      b.classList.add('is-playing');
-    } else {
-      v.pause();
-      const txt = b.querySelector('.btn-text');
-      if(txt) txt.textContent = 'PLAY VIDEO';
-      b.classList.remove('is-playing');
-    }
-  });
-}
-
 /* ══════════════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════════════ */
